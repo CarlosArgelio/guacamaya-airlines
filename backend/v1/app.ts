@@ -1,7 +1,10 @@
 import express, { Application, Request, Response } from 'express'
+import bodyParser from 'body-parser'
 
 export const createApp = () => {
   const app: Application = express()
+
+  app.use(bodyParser.json())
 
   const route = express.Router()
 
