@@ -13,7 +13,7 @@ describe('GET /', () => {
   })
 
   test('return 200 & Hello World test', async () => {
-    const res = await api.get('/')
+    const res = await api.get('/api/v1/')
 
     expect(res.statusCode).toEqual(200)
   })
