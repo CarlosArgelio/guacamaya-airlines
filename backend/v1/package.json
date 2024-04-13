@@ -16,7 +16,9 @@
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "nodemon": "^3.1.0",
-    "ts-node": "^10.9.2"
+    "resend": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
