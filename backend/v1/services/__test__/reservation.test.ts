@@ -1,9 +1,12 @@
 import { faker } from '@faker-js/faker'
 
-export class ReservationService {
-  constructor(private readonly database: any = []) {
-    for (let i = 0; i < 10; i++) {
-      this.database.push({
+import { ReservationService } from './../reservations'
+
+describe('ReservationService', () => {
+  describe('createReservation', () => {
+    test('should create a reservation', () => {
+      const reservationService = new ReservationService()
+      const data = {
         id: faker.string.uuid(),
         email: faker.internet.email(),
         oneWay: faker.datatype.boolean(),
@@ -16,12 +19,9 @@ export class ReservationService {
           adults: faker.number.int({ min: 1, max: 10 }),
           children: faker.number.int({ min: 0, max: 10 }),
         },
-      })
-    }
-  }
-
-  async createReservation(reservation: any) {
-    this.database.push(reservation)
-    return reservation
-  }
-}
+      }
+      const reservation = reservationService.createReservation(data)
+      expect(reservation).toBeDefined()
+    })
+  })
+})
