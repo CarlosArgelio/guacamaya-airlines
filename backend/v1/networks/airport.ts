@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express'
-import { AirPortController } from '../controllers/airport'
+import { AirPortController } from '../controllers'
 
 export const airpot = Router()
 

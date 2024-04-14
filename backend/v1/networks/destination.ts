@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express'
-import { DestinationController } from '../controllers/destination'
+import { DestinationController } from '../controllers'
 
 export const destination = Router()
 
