@@ -2,7 +2,7 @@
 
 function Faqs() {
   return (
-    <div className="max-w-3xl mx-auto py-8">
+    <div className="max-w-6xl mx-auto py-8">
       <h2 className="text-3xl font-semibold mb-4">Preguntas Frecuentes</h2>
       <div className="divide-y divide-gray-300">
         {/* Pregunta 1 */}
