@@ -65,7 +65,7 @@ export class AirPortService {
    * @param {string} id - The ID of the airport to be removed.
    * @returns {boolean|null} - Returns true if the airport object was successfully removed, or null if the airport object with the specified ID was not found in the database.
    */
-  remove(id: string) {
+  remove(id: string): boolean | null {
     const index = this.database.findIndex((item) => item.id === id)
     if (index === -1) {
       return null

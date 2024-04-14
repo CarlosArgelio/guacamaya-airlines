@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker'
 import { AirPortService } from '../airport'
 
 describe('Test Instance AirPortService', () => {
@@ -33,7 +34,7 @@ describe('Test Instance AirPortService', () => {
       expect(result instanceof Array).toBe(true)
     })
   })
-
+  // Method FindAll
   describe('Should be able to retrieve one airport from database using "findOne" method', () => {
     test('should return undefined when the id does not exist in the database', () => {
       const airportService = new AirPortService()
@@ -49,6 +50,31 @@ describe('Test Instance AirPortService', () => {
       const result = airportService.findOne(id)
 
       expect(result).toEqual(airportService.database[0])
+    })
+  })
+  // Method Create
+  describe('Should be able to create a new airport in the database using "create" method', () => {
+    // Should add a new airport object to the database array
+    test('should add a new airport object to the database array when data is provided', () => {
+      const airportService = new AirPortService()
+      const data = {
+        id: faker.string.uuid(),
+        name: faker.location.city(),
+      }
+      const result = airportService.create(data)
+      expect(result).toEqual(data)
+      expect(airportService.database).toContain(data)
+    })
+    // Add a new airport object to the database array and check if the length of the database array increases by 1
+    test('should add a new airport object to the database array and increase the length by 1', () => {
+      const airportService = new AirPortService()
+      const data = {
+        id: faker.string.uuid(),
+        name: faker.location.city(),
+      }
+      const initialLength = airportService.database.length
+      airportService.create(data)
+      expect(airportService.database.length).toBe(initialLength + 1)
     })
   })
 })
