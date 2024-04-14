@@ -28,7 +28,7 @@ const update = (req: Request, res: Response, nex: NextFunction) => {
 
   const controller = new AirPortController()
   const updateAirport = controller.update(id, changes)
-  return updateAirport
+  res.json(updateAirport)
 }
 const remove = (req: Request, res: Response, nex: NextFunction) => {
   const { id } = req.params
