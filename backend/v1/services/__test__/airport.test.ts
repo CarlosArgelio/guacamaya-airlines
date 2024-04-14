@@ -33,4 +33,22 @@ describe('Test Instance AirPortService', () => {
       expect(result instanceof Array).toBe(true)
     })
   })
+
+  describe('Should be able to retrieve one airport from database using "findOne" method', () => {
+    test('should return undefined when the id does not exist in the database', () => {
+      const airportService = new AirPortService()
+      const id = 'nonexistent-id'
+      const result = airportService.findOne(id)
+      expect(result).toBeUndefined()
+    })
+
+    test('should return the airport with the specified id', () => {
+      const airportService = new AirPortService()
+
+      const id = airportService.database[0].id
+      const result = airportService.findOne(id)
+
+      expect(result).toEqual(airportService.database[0])
+    })
+  })
 })

@@ -12,34 +12,34 @@ export class DataFakeAirPort {
   }
 }
 
-const { database } = new DataFakeAirPort()
-
 export class AirPortService {
-  // private readonly database: any = []
-  constructor() {}
+  constructor(
+    public readonly database: Array<any> = new DataFakeAirPort().database,
+  ) {}
 
   findAll() {
-    return database
+    const airtports = this.database
+    return airtports
   }
   findOne(id: string) {
-    const airPort = database.find((item: any) => item.id === id)
+    const airPort = this.database.find((item: any) => item.id === id)
     return airPort
   }
   create(data: any) {
-    database.push(data)
+    this.database.push(data)
     return data
   }
   update(id: string, changes: any) {
-    const index = database.findIndex((item: any) => item.id === id)
-    database[index] = {
-      ...database[index],
+    const index = this.database.findIndex((item: any) => item.id === id)
+    this.database[index] = {
+      ...this.database[index],
       ...changes,
     }
-    return database[index]
+    return this.database[index]
   }
   remove(id: string) {
-    const index = database.findIndex((item: any) => item.id === id)
-    database.splice(index, 1)
+    const index = this.database.findIndex((item: any) => item.id === id)
+    this.database.splice(index, 1)
     return
   }
 }
