@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { ReservationController } from '../controllers/reservation'
 
-const reserver = Router()
+export const reserver = Router()
 
 const create = (req: Request, res: Response, next: NextFunction) => {
   const data = req.body

@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { AirPortController } from '../controllers/airport'
 
-const airpot = Router()
+export const airpot = Router()
 
 const findAll = (req: Request, res: Response, nex: NextFunction) => {
   const controller = new AirPortController()
@@ -39,8 +39,8 @@ const remove = (req: Request, res: Response, nex: NextFunction) => {
   res.status(204).json()
 }
 
-airpot.get('/airpots', findAll)
-airpot.get('/airpots/:id', findOne)
-airpot.post('/airpots', create)
-airpot.put('/airpots/:id', update)
-airpot.delete('/airpots/:id', remove)
+airpot.get('/', findAll)
+airpot.get('/:id', findOne)
+airpot.post('/', create)
+airpot.put('/:id', update)
+airpot.delete('/:id', remove)
