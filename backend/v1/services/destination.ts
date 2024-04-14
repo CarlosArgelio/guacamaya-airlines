@@ -13,38 +13,41 @@ export class DataFakeDestination {
   }
 }
 
-const { database } = new DataFakeDestination()
-
 export class DestinationService {
   // private readonly database: any
-  constructor() {}
+  constructor(
+    public readonly database: Array<any> = new DataFakeDestination().database,
+  ) {}
 
   findAll() {
-    return database
+    return this.database
   }
   findOne(id: string) {
-    console.log(database)
+    console.log(this.database)
 
-    const destination = database.find((item: any) => item.id === id)
+    const destination = this.database.find((item: any) => item.id === id)
     return destination
   }
   create(data: any) {
-    database.push(data)
-    const destination = database.find((item: any) => item.id === data.id)
+    this.database.push(data)
+    const destination = this.database.find((item: any) => item.id === data.id)
 
     return destination
   }
   update(id: string, changes: any) {
-    const index = database.findIndex((item: any) => item.id === id)
-    database[index] = {
-      ...database[index],
-      ...changes,
+    const index = this.database.findIndex((item: any) => item.id === id)
+    if (index === -1) {
+      return null
     }
-    return database[index]
+    this.database[index] = { ...this.database[index], ...changes }
+    return this.database[index]
   }
   remove(id: string) {
-    const index = database.findIndex((item: any) => item.id === id)
-    database.splice(index, 1)
-    return
+    const index = this.database.findIndex((item) => item.id === id)
+    if (index === -1) {
+      return null
+    }
+    this.database.splice(index, 1)
+    return true
   }
 }
