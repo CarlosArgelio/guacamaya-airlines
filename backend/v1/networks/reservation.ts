@@ -8,7 +8,7 @@ const create = (req: Request, res: Response, next: NextFunction) => {
 
   const controller = new ReservationController()
   const newReserver = controller.create(data)
-  return res.status(201).json(newReserver)
+  res.status(201).json(newReserver)
 }
 
 reserver.post('/', create)

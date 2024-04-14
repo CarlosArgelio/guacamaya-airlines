@@ -10,7 +10,7 @@ export class ReservationController {
   ) {}
 
   async create(data: any) {
-    // const { email } = data
+    const { email } = data
     const id = v4()
 
     const newReservation = {
@@ -20,11 +20,11 @@ export class ReservationController {
 
     const reservation =
       await this.reservationService.createReservation(newReservation)
-    // await this.emailService.sendEmail(
-    //   email,
-    //   'Hello World',
-    //   '<p>This is a testing</p>',
-    // )
+    await this.emailService.sendEmail(
+      email,
+      'Hello World',
+      '<p>This is a testing</p>',
+    )
     return reservation
   }
 }
