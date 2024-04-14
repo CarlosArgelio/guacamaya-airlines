@@ -77,4 +77,25 @@ describe('Test Instance AirPortService', () => {
       expect(airportService.database.length).toBe(initialLength + 1)
     })
   })
+
+  describe('Should be able to update an airport in the database using "update" method', () => {
+    test('should update an existing airport object in the database with valid input', () => {
+      const airportService = new AirPortService()
+      const id = airportService.database[0].id
+      const changes = { name: 'New Airport Name' }
+
+      const updatedAirport = airportService.update(id, changes)
+
+      expect(updatedAirport).toEqual({ id: id, name: 'New Airport Name' })
+    })
+    test('should return null if airport object with specified ID is not found in the database', () => {
+      const airportService = new AirPortService()
+      const id = 'nonexistent-id'
+      const changes = { name: 'New Airport Name' }
+
+      const updatedAirport = airportService.update(id, changes)
+
+      expect(updatedAirport).toBeNull()
+    })
+  })
 })
