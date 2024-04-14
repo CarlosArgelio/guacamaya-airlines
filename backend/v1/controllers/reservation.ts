@@ -1,7 +1,7 @@
 import { uuid as v4 } from 'uuidv4'
 
-import { ReservationService } from '../services/reservations'
-import { ResendService } from '../services/email'
+import { ReservationService } from '../services'
+import { ResendService } from '../services'
 
 export class ReservationController {
   constructor(

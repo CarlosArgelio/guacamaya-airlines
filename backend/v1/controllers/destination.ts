@@ -1,5 +1,5 @@
 import { uuid } from 'uuidv4'
-import { DestinationService } from '../services/destination'
+import { DestinationService } from '../services'
 
 export class DestinationController {
   constructor(private readonly destinationService = new DestinationService()) {}

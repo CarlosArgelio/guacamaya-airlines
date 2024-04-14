@@ -1,5 +1,5 @@
 import { uuid } from 'uuidv4'
-import { AirPortService } from '../services/airport'
+import { AirPortService } from '../services'
 
 export class AirPortController {
   constructor(private readonly airportService = new AirPortService()) {}
