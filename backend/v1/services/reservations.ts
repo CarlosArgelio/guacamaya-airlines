@@ -4,7 +4,7 @@ export class ReservationService {
   constructor(private readonly database: any = []) {
     for (let i = 0; i < 10; i++) {
       this.database.push({
-        id: faker.datatype.uuid(),
+        id: faker.string.uuid(),
         email: faker.internet.email(),
         oneWay: faker.datatype.boolean(),
         roundTrip: faker.datatype.boolean(),
@@ -13,8 +13,8 @@ export class ReservationService {
         dateStart: faker.date.future(),
         dateEnd: faker.date.future(),
         people: {
-          adults: faker.datatype.number({ min: 1, max: 10 }),
-          children: faker.datatype.number({ min: 0, max: 10 }),
+          adults: faker.number.int({ min: 1, max: 10 }),
+          children: faker.number.int({ min: 0, max: 10 }),
         },
       })
     }
