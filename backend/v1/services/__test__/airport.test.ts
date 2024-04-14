@@ -98,4 +98,16 @@ describe('Test Instance AirPortService', () => {
       expect(updatedAirport).toBeNull()
     })
   })
+
+  describe('Should be able to remove an airport from the database using "remove" method', () => {
+    test('should remove an airport object from the database with valid input', () => {
+      const airportService = new AirPortService()
+      const id = airportService.database[0].id
+
+      const result = airportService.remove(id)
+
+      expect(result).toBe(true)
+      expect(airportService.database).not.toContainEqual({ id: id })
+    })
+  })
 })
