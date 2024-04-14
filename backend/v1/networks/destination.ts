@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { DestinationController } from '../controllers/destination'
 
-const destination = Router()
+export const destination = Router()
 
 const findAll = (req: Request, res: Response, nex: NextFunction) => {
   const controller = new DestinationController()
@@ -28,7 +28,7 @@ const update = (req: Request, res: Response, nex: NextFunction) => {
 
   const controller = new DestinationController()
   const updateDestination = controller.update(id, changes)
-  return updateDestination
+  res.json(updateDestination)
 }
 const remove = (req: Request, res: Response, nex: NextFunction) => {
   const { id } = req.params
@@ -39,8 +39,8 @@ const remove = (req: Request, res: Response, nex: NextFunction) => {
   res.status(204).json()
 }
 
-destination.get('/destinations', findAll)
-destination.get('/destinations/:id', findOne)
-destination.post('/destinations', create)
-destination.put('/destinations/:id', update)
-destination.delete('/destinations/:id', remove)
+destination.get('/', findAll)
+destination.get('/:id', findOne)
+destination.post('/', create)
+destination.put('/:id', update)
+destination.delete('/:id', remove)

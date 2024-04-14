@@ -1,3 +1,4 @@
+import { uuid } from 'uuidv4'
 import { DestinationService } from '../services/destination'
 
 export class DestinationController {
@@ -10,7 +11,10 @@ export class DestinationController {
     return this.destinationService.findOne(id)
   }
   create(data: any) {
-    return this.destinationService.create(data)
+    const id = uuid()
+    const newDestination = { id, ...data }
+
+    return this.destinationService.create(newDestination)
   }
   update(id: string, changes: any) {
     return this.destinationService.update(id, changes)

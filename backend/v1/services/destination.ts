@@ -1,28 +1,50 @@
+import { faker } from '@faker-js/faker'
+
+export class DataFakeDestination {
+  database: any = []
+  constructor() {
+    for (let i = 0; i < 10; i++) {
+      this.database.push({
+        id: faker.string.uuid(),
+        name: faker.location.city(),
+        image: faker.image.url(),
+      })
+    }
+  }
+}
+
+const { database } = new DataFakeDestination()
+
 export class DestinationService {
-  constructor(private readonly database: any = []) {}
+  // private readonly database: any
+  constructor() {}
 
   findAll() {
-    return this.database
+    return database
   }
   findOne(id: string) {
-    const airPort = this.database.find((item: any) => item.id === id)
-    return airPort
+    console.log(database)
+
+    const destination = database.find((item: any) => item.id === id)
+    return destination
   }
   create(data: any) {
-    this.database.push(data)
-    return data
+    database.push(data)
+    const destination = database.find((item: any) => item.id === data.id)
+
+    return destination
   }
   update(id: string, changes: any) {
-    const index = this.database.findIndex((item: any) => item.id === id)
-    this.database[index] = {
-      ...this.database[index],
+    const index = database.findIndex((item: any) => item.id === id)
+    database[index] = {
+      ...database[index],
       ...changes,
     }
-    return this.database[index]
+    return database[index]
   }
   remove(id: string) {
-    const index = this.database.findIndex((item: any) => item.id === id)
-    this.database.splice(index, 1)
+    const index = database.findIndex((item: any) => item.id === id)
+    database.splice(index, 1)
     return
   }
 }
