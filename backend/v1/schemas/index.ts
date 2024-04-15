@@ -1,6 +1,7 @@
 import { createReservation } from './reservation'
 import { createAirPort, findId } from './airports'
 import { createDestination, updateDestination } from './destination'
+import { Schemas } from './schemas'
 
 export {
   createReservation,
@@ -8,4 +9,5 @@ export {
   findId,
   createDestination,
   updateDestination,
+  Schemas,
 }

@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 
 import { networks } from './networks'
 import { config } from './configuration/config'
+import { schemaHandler } from './middlewares'
 
 const { port } = config
 
@@ -22,6 +23,9 @@ export const createApp = () => {
   const networkRouter = networks()
 
   app.use('/api/v1', networkRouter)
+
+  //@ts-ignore
+  app.use(schemaHandler)
 
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
