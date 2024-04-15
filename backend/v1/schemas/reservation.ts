@@ -10,7 +10,7 @@ const dateEnd = Joi.date().timestamp()
 const adults = Joi.number().min(1).max(10)
 const children = Joi.number().min(0).max(10)
 
-const Reservation = Joi.object({
+export const createReservation = Joi.object({
   email: email.required(),
   oneWay: oneWay.required(),
   roundTrip: roundTrip.required(),
@@ -23,5 +23,3 @@ const Reservation = Joi.object({
     children: children.required(),
   }),
 })
-
-export { Reservation }
