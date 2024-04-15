@@ -1,5 +1,4 @@
-import { AirPortController } from './airport'
-import { DestinationController } from './destination'
+import { CRUDController } from './crud'
 import { ReservationController } from './reservation'
 
-export { AirPortController, DestinationController, ReservationController }
+export { CRUDController, ReservationController }
