@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-function Formulario() {
-  const [nombre, setNombre] = useState('');
+function Form() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [mensaje, setMensaje] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Aquí puedes hacer algo con los datos del formulario, como enviarlos a un servidor
-    console.log('Datos del formulario:', { nombre, email, mensaje });
+    console.log('Datos del formulario:', { name, email, message });
   };
 
   return (
@@ -16,13 +16,13 @@ function Formulario() {
       <h1 className="text-xl font-bold mb-4">Formulario de Contacto</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="nombre" className="block text-gray-700 font-semibold">Nombre:</label>
+          <label htmlFor="name" className="block text-gray-700 font-semibold">Nombre:</label>
           <input
             type="text"
-            id="nombre"
+            id="name"
             className="w-full px-3 py-2 border rounded-md"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -38,12 +38,12 @@ function Formulario() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="mensaje" className="block text-gray-700 font-semibold">Mensaje:</label>
+          <label htmlFor="message" className="block text-gray-700 font-semibold">Mensaje:</label>
           <textarea
-            id="mensaje"
+            id="message"
             className="w-full px-3 py-2 border rounded-md"
-            value={mensaje}
-            onChange={(e) => setMensaje(e.target.value)}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
         </div>
@@ -53,4 +53,4 @@ function Formulario() {
   );
 }
 
-export default Formulario;
+export default Form;
