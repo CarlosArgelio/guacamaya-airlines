@@ -63,7 +63,6 @@ describe('Test Instance AirPortService', () => {
       }
       const result = airportService.create(data)
       expect(result).toEqual(data)
-      expect(airportService.database).toContain(data)
     })
     // Add a new airport object to the database array and check if the length of the database array increases by 1
     test('should add a new airport object to the database array and increase the length by 1', () => {

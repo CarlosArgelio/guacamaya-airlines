@@ -1,3 +1,4 @@
+import { uuid as v4 } from 'uuidv4'
 import { faker } from '@faker-js/faker'
 
 export class ReservationService {
@@ -21,7 +22,9 @@ export class ReservationService {
   }
 
   async createReservation(reservation: any) {
-    this.database.push(reservation)
+    const id = v4()
+    const newReservation = { ...reservation, id }
+    this.database.push(newReservation)
     return reservation
   }
 }
