@@ -13,6 +13,12 @@ export const createApp = () => {
 
   // home endpoint
 
+  app.use(express.static('public'))
+
+  app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/welcome.html')
+  })
+
   const networkRouter = networks()
 
   app.use('/api/v1', networkRouter)
