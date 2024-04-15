@@ -1,3 +1,4 @@
+import boom from '@hapi/boom'
 import { AirPortService, DestinationService } from '../services'
 
 /**
@@ -31,7 +32,7 @@ export class CRUDController {
   findOne(id: string) {
     const data = this.services.findOne(id)
     if (!data) {
-      throw new Error('id not found')
+      throw boom.notFound('id not found')
     }
     return data
   }

@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import boom from '@hapi/boom'
 
 dotenv.config({
   path: '.env',
@@ -18,15 +19,15 @@ const EMAIL_FROM_RESEND_EMAIL = process.env.EMAIL_FROM_RESEND_EMAIL
 const NODE_ENV = process.env.NODE_ENV
 
 if (!PORT) {
-  throw new Error('PORT is not defined')
+  throw boom.badRequest('PORT is not defined')
 }
 
 if (!KEY_RESEND_EMAIL) {
-  throw new Error('KEY_RESEND_EMAIL is not defined')
+  throw boom.badRequest('KEY_RESEND_EMAIL is not defined')
 }
 
 if (!EMAIL_FROM_RESEND_EMAIL) {
-  throw new Error('EMAIL_FROM_RESEND_EMAIL is not defined')
+  throw boom.badRequest('EMAIL_FROM_RESEND_EMAIL is not defined')
 }
 
 export const config: Config = {
