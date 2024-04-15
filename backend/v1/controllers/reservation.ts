@@ -1,5 +1,3 @@
-import { uuid as v4 } from 'uuidv4'
-
 import { ReservationService, ResendService } from '../services'
 
 export class ReservationController {
@@ -10,15 +8,7 @@ export class ReservationController {
 
   async create(data: any) {
     const { email } = data
-    const id = v4()
-
-    const newReservation = {
-      id,
-      ...data,
-    }
-
-    const reservation =
-      await this.reservationService.createReservation(newReservation)
+    const reservation = await this.reservationService.createReservation(data)
     await this.emailService.sendEmail(
       email,
       'Hello World',
