@@ -1,7 +1,9 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { CRUDController } from '../controllers'
 import { DestinationService } from './../services'
-import { success } from '../middlewares'
+import { success, schemaHandler } from '../middlewares'
+import { Properties } from './../middlewares'
+import { Schemas } from './../schemas'
 
 export const destination = Router()
 
@@ -61,7 +63,24 @@ const remove = (req: Request, res: Response, next: NextFunction) => {
 }
 
 destination.get('/', findAll)
-destination.get('/:id', findOne)
-destination.post('/', create)
-destination.put('/:id', update)
-destination.delete('/:id', remove)
+destination.get(
+  '/:id',
+  schemaHandler(Schemas.ID_SCHEMA, Properties.PATH),
+  findOne,
+)
+destination.post(
+  '/',
+  schemaHandler(Schemas.CREATE_DESTINATION_SCHEMA, Properties.BODY),
+  create,
+)
+destination.put(
+  '/:id',
+  schemaHandler(Schemas.ID_SCHEMA, Properties.PATH),
+  schemaHandler(Schemas.UPDATE_DESTINATION_SCHEMA, Properties.BODY),
+  update,
+)
+destination.delete(
+  '/:id',
+  schemaHandler(Schemas.ID_SCHEMA, Properties.PATH),
+  remove,
+)
