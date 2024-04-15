@@ -10,13 +10,13 @@ import OurPlaces from "./pages/OurPlaces/OurPlaces"
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <Form></Form>
-      <OurPlaces></OurPlaces>
-      <FAQS></FAQS>
-      <Table></Table>
-      <Footer></Footer>
+      <Navbar />
+      <Banner />
+      <Form />
+      <OurPlaces />
+      <FAQS />
+      <Table />
+      <Footer />
     </>
   )
 }
