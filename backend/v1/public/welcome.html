@@ -73,43 +73,77 @@
         font-size: 1.5em;
         margin-right: 5px;
       }
+
+      .tecnologia {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        position: relative;
+      }
+
+      .tecnologia h3 {
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .tecnologia p {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        transition: opacity 0.3s ease;
+      }
+
+      .tecnologia:hover p {
+        display: block;
+        opacity: 1;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Optional: Set width to 100% for full-width centering */
+      }
     </style>
   </head>
   <body>
     <header>
       <h1>Backend with Express y TypeScript</h1>
       <h2>By Carlos Palacios</h2>
-      <div class="logo">
-        <img src="./logo-express.png" alt="Logo Express" />
-      </div>
       <div class="desarrollador">
-        <img src="foto-desarrollador.jpg" alt="Foto Carlos Palacios" />
+        <img src="./developerBackend.png" alt="Foto Carlos Palacios" />
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <section class="tecnologias">
+        <div class="tecnologia">
+          <a href="http://localhost:3000/">
+            <h3>Documentación</h3>
+            <i class="fas fa-link"></i>
+          </a>
+          <p>Revisa la documentación del proyecto :D</p>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <p>Redes Sociales:</p>
       <ul>
         <li>
-          <a href="https://www.linkedin.com/"
-            ><i class="fab fa-linkedin"></i> LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://www.fiverr.com/"
-            ><i class="fab fa-fiverr"></i> Fiverr</a
-          >
-        </li>
-        <li>
-          <a href="https://www.crendly.com/"
-            ><i class="fab fa-crendly"></i> Crendly</a
-          >
+          <a href="https://www.linkedin.com/in/palaciosrcarlosa/"
+            ><i class="fab fa-linkedin"></i> LinkedIn
+          </a>
         </li>
       </ul>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
