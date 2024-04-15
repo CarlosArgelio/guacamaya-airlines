@@ -2,6 +2,9 @@ import express, { Application, Request, Response } from 'express'
 import bodyParser from 'body-parser'
 
 import { networks } from './networks'
+import { config } from './configuration/config'
+
+const { port } = config
 
 export const createApp = () => {
   const app: Application = express()
@@ -14,8 +17,8 @@ export const createApp = () => {
 
   app.use('/api/v1', networkRouter)
 
-  app.listen(3000, () => {
-    console.log('Server is running on port 3000')
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
   })
 
   return app
