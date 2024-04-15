@@ -5,8 +5,8 @@ const oneWay = Joi.boolean() // Solo ida
 const roundTrip = Joi.boolean() // Ida y vuelta
 const from = Joi.string()
 const to = Joi.string()
-const dateStart = Joi.date()
-const dateEnd = Joi.date()
+const dateStart = Joi.date().timestamp()
+const dateEnd = Joi.date().timestamp()
 const adults = Joi.number().min(1).max(10)
 const children = Joi.number().min(0).max(10)
 
