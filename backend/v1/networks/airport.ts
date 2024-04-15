@@ -1,7 +1,9 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { CRUDController } from './../controllers'
 import { AirPortService } from './../services'
-import { success } from './../middlewares'
+import { success, schemaHandler } from './../middlewares'
+import { Properties } from './../middlewares'
+import { Schemas } from './../schemas'
 
 export const airpot = Router()
 
@@ -61,7 +63,16 @@ const remove = (req: Request, res: Response, next: NextFunction) => {
 }
 
 airpot.get('/', findAll)
-airpot.get('/:id', findOne)
-airpot.post('/', create)
-airpot.put('/:id', update)
-airpot.delete('/:id', remove)
+airpot.get('/:id', schemaHandler(Schemas.ID_SCHEMA, Properties.PATH), findOne)
+airpot.post(
+  '/',
+  schemaHandler(Schemas.CREATE_AIRPORT_SCHEMA, Properties.BODY),
+  create,
+)
+airpot.put(
+  '/:id',
+  schemaHandler(Schemas.ID_SCHEMA, Properties.PATH),
+  schemaHandler(Schemas.UPDATE_AIRPORT_SCHEMA, Properties.BODY),
+  update,
+)
+airpot.delete('/:id', schemaHandler(Schemas.ID_SCHEMA, Properties.PATH), remove)
