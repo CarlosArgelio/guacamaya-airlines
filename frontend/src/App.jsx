@@ -2,6 +2,7 @@ import Banner from "./Guacamaya/Banner"
 import Formulario from "./Guacamaya/Form"
 import Navbar from "./Guacamaya/Navbar"
 import FAQS from "./Guacamaya/FAQS"
+import Table from "./Guacamaya/FlightPlans"
 import Footer from "./Guacamaya/Footer"
 import OurPlaces from "./Guacamaya/OurPlaces/OurPlaces"
 
@@ -15,6 +16,7 @@ function App() {
       <Formulario></Formulario>
       <OurPlaces></OurPlaces>
       <FAQS></FAQS>
+      <Table></Table>
       <Footer></Footer>
 
     </>
