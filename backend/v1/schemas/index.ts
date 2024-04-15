@@ -1,3 +1,11 @@
-import Joi from 'joi'
+import { createReservation } from './reservation'
+import { createAirPort, findId } from './airports'
+import { createDestination, updateDestination } from './destination'
 
-const id = Joi.string().uuid()
+export {
+  createReservation,
+  createAirPort,
+  findId,
+  createDestination,
+  updateDestination,
+}
