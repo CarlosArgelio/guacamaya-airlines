@@ -1,4 +1,3 @@
-import { uuid } from 'uuidv4'
 import { AirPortService } from '../services'
 
 /**
@@ -40,9 +39,7 @@ export class AirPortController {
    * @returns The added airport object.
    */
   create(data: any) {
-    const id = uuid()
-    const newAirPort = { id, ...data }
-    return this.airportService.create(newAirPort)
+    return this.airportService.create(data)
   }
 
   /**
