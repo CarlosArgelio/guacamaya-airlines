@@ -8,7 +8,11 @@ export class AirPortController {
     return this.airportService.findAll()
   }
   findOne(id: string) {
-    return this.airportService.findOne(id)
+    const airport = this.airportService.findOne(id)
+    if (!airport) {
+      throw new Error('Airport not found')
+    }
+    return airport
   }
   create(data: any) {
     const id = uuid()
@@ -16,9 +20,11 @@ export class AirPortController {
     return this.airportService.create(newAirPort)
   }
   update(id: string, changes: any) {
+    this.findOne(id)
     return this.airportService.update(id, changes)
   }
   remove(id: string) {
+    this.findOne(id)
     return this.airportService.remove(id)
   }
 }
