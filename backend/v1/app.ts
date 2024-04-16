@@ -6,9 +6,13 @@ import { networks } from './networks'
 import { config } from './configuration/config'
 import { boomErrorHandler, errorHandler, logErrors } from './middlewares'
 
+import { AppDataSource } from './databases'
+
 const { port } = config
 
 export const createApp = () => {
+  AppDataSource
+
   const app: Application = express()
 
   app.use(bodyParser.json())
