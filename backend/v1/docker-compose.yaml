@@ -1,28 +1,17 @@
 version: '3.3'
 
 services:
-  mysql:
-    image: mysql:${MYSQL_VERSION}
-    environment:
-      - MYSQL_DATABASE=${MYSQL_DB}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+  mariadb:
+    image: "mariadb:${MARIADB_VERSION}"
     ports:
-      - '${MYSQL_PORT}:${MYSQL_PORT}'
-    expose:
-      - '${MYSQL_PORT}'
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_USER: ${DATABASE_USERNAME}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
     volumes:
-      - ./mysql_data:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-      - PMA_HOST=mysql
-    ports:
-      - '${PHPMYADMIN_PORT_INSTANCE}:${PHPMYADMIN_PORT_IMAGE}'
-    depends_on:
-      - mysql
+      - ./mariadb:/var/lib/mysql
 
 volumes:
-  mysql_data: {}
+  mariadb: {}
