@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { ReservationController } from '../controllers'
 import { success, schemaHandler } from './../middlewares'
-import { Properties } from './../middlewares'
-import { Schemas } from './../schemas'
+import { Properties } from '../middlewares'
+import { createReservation } from './../schemas'
 
 export const reserver = Router()
 
@@ -17,8 +17,4 @@ const create = (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-reserver.post(
-  '/',
-  schemaHandler(Schemas.CREATE_RESERVATION_SCHEMA, Properties.BODY),
-  create,
-)
+reserver.post('/', schemaHandler(createReservation, Properties.BODY), create)
