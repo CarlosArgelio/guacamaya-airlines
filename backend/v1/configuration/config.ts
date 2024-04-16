@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import boom from '@hapi/boom'
+import { DataSourceOptions } from 'typeorm'
 
 import { Config } from './configuration'
 
@@ -56,15 +57,16 @@ if (!DATABASE) {
 }
 
 export const config: Config = {
-  port: PORT,
+  port: +PORT,
   apiKeyResend: KEY_RESEND_EMAIL,
   emailFromResend: EMAIL_FROM_RESEND_EMAIL,
   isDev: NODE_ENV === 'development',
   isProd: NODE_ENV === 'production',
   database: {
+    //@ts-ignore
     type: TYPE,
     host: HOST,
-    port: PORT_DB,
+    port: +PORT_DB,
     username: USERNAME,
     password: PASSWORD,
     database: DATABASE,

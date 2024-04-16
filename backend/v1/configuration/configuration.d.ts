@@ -1,14 +1,16 @@
+import { DataSourceOptions } from 'typeorm'
+
 export interface DataBase {
-  type: string
+  type: DataSourceOptions
   host: string
-  port: string
+  port: number
   username: string
   password: string
   database: string
 }
 
 export interface Config {
-  port: string
+  port: number
   apiKeyResend: string
   emailFromResend: string
   database: DataBase
