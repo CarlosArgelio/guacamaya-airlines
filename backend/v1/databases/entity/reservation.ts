@@ -3,7 +3,7 @@ import { Entity, Column } from 'typeorm'
 import { BaseEntity } from './base.entity'
 
 @Entity()
-export class Reservation extends BaseEntity {
+export class Reservations extends BaseEntity {
   @Column({ type: 'varchar', length: 100 })
   email!: string
 

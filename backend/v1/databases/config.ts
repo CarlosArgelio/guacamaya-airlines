@@ -1,6 +1,8 @@
 import { DataSource } from 'typeorm'
 
-import { Reservation } from './entity/reservation'
+import { Reservations } from './entity/reservation'
+import { Destinations } from './entity/destination'
+import { Airports } from './entity/airport'
 
 import { config } from './../configuration/config'
 
@@ -16,7 +18,7 @@ export const AppDataSource = new DataSource({
   database,
   synchronize: true,
   logging: true,
-  entities: [Reservation],
+  entities: [Reservations, Destinations, Airports],
   subscribers: [],
   migrations: [],
 })
