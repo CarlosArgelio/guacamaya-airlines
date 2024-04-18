@@ -2,6 +2,7 @@
 
 export { default as Logo } from './logo_guacamaya.svg';
 export { default as Icon } from './icon_guacamaya.svg';
+export { default as Linkedin } from './linkedin.png';
 export { default as LosRoques } from './Los_roques.svg';
 export { default as Margarita } from './Margarita.svg';
 export { default as Medanos } from './Medanos_de_coro.svg';
