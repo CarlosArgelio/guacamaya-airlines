@@ -1,4 +1,4 @@
-import { Linkedin } from "../assets/index";
+import { Linkedin } from "../assets";
 
 function Footer() {
   return (
@@ -37,52 +37,22 @@ function Footer() {
 
           <div className="md:w-1/3">
             <h3 className="text-xl font-bold mb-2">Desarrolladores</h3>
+            
+            {
+              Developers.map(developer => (
+                <div key={developer.id}>
+                
+                  <div className="flex py-1">
+                
+                    <img src={developer.img} alt="" className="w-4 h-4 mr-2 " />
+                    <a href={developer.linkedin} className="py-1 hover:text-blue-500"> {developer.name} </a>
 
-            <p className="py-1 ">Jisbel C. Rodriguez P. (Developer Frontend)</p>
-            <div className="flex ">
-              <img src={Linkedin} alt="" className="w-4 h-4 mr-2" />
-              <a
-                href="https://www.linkedin.com/in/jisbel-carolina-rodriguez-padron/"
-                className="text-sm "
-              >
-                https://www.linkedin.com/in/jisbel-carolina-rodriguez-padron/
-              </a>
-            </div>
+                  </div>
 
-            <p className="py-1">Carlos A. Palacios R. (Developer Backend)</p>
-            <div className="flex ">
-              <img src={Linkedin} alt="" className="w-4 h-4 mr-2" />
-              <a
-                className="text-sm"
-                href="https://www.linkedin.com/in/palaciosrcarlosa/"
-              >
-                https://www.linkedin.com/in/palaciosrcarlosa/
-              </a>
-            </div>
+                </div>
+              ))
+            }
 
-            <p className="py-1">
-              Betania N. Lezama (Estudiante de informatica)
-            </p>
-            <div className="flex ">
-              <img src={Linkedin} alt="" className="w-4 h-4 mr-2" />
-              <a
-                className="text-sm"
-                href="https://www.linkedin.com/in/betania-lezama-nohemyvimas"
-              >
-                https://www.linkedin.com/in/betania-lezama-nohemyvimas
-              </a>
-            </div>
-
-            <p className="py-1">Carlos S. Palacios F. (DevOps)</p>
-            <div className="flex ">
-              <img src={Linkedin} alt="" className="w-4 h-4 mr-2" />
-              <a
-                className="text-sm"
-                href="https://www.linkedin.com/in/carlosspalacios/"
-              >
-                https://www.linkedin.com/in/carlosspalacios/
-              </a>
-            </div>
           </div>
         </div>
 
@@ -98,5 +68,34 @@ function Footer() {
     </footer>
   );
 }
+
+const Developers = [
+{  
+  id: 1 ,
+  name: 'Jisbel C. Rodriguez P. (Developer Frontend)',
+  img: Linkedin,
+  linkedin: 'https://www.linkedin.com/in/jisbel-carolina-rodriguez-padron/',
+},
+{  
+  id: 2 ,
+  name: 'Carlos A. Palacios R. (Developer Backend)',
+  img: Linkedin,
+  linkedin: 'https://www.linkedin.com/in/palaciosrcarlosa/',
+},
+{  
+  id: 3 ,
+  name: ' Betania N. Lezama (Estudiante de informatica)',
+  img: Linkedin,
+  linkedin: 'https://www.linkedin.com/in/betania-lezama-nohemyvimas',
+},
+{  
+  id: 4 ,
+  name: 'Carlos S. Palacios F. (DevOps)',
+  img:Linkedin ,
+  linkedin: 'https://www.linkedin.com/in/carlosspalacios/',
+}
+]
+
+
 
 export default Footer;
