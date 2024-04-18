@@ -1,9 +1,8 @@
 import boom from '@hapi/boom'
 import { NextFunction, Request, Response } from 'express'
-import { Properties } from './middlewares'
-import { Schemas } from './../schemas'
+import { Properties } from './index'
 
-export const schemaHandler = (Dtos: Schemas, property: Properties) => {
+export const schemaHandler = (Dtos: any, property: Properties) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const data = req[property]
     // @ts-ignore
