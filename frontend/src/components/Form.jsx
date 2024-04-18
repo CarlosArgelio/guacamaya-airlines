@@ -1,54 +1,129 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { TicketIcon } from "@heroicons/react/24/outline";
+import "cally";
 
 function Form() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí puedes hacer algo con los datos del formulario, como enviarlos a un servidor
-    console.log('Datos del formulario:', { name, email, message });
+
+    console.log("Datos del formulario:", { name, email });
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 bg-gray-100 rounded-lg">
-      <h1 className="text-xl font-bold mb-4">Formulario de Contacto</h1>
+    <div className="relative max-w-6xl -top-24 mx-auto rounded-b-xl shadow-xl">
+
+      <div className="flex rounded-t-xl pt-2 justify-center bg-green-400 drop-shadow-lg">
+        <h1 className="text-3xl font-bold mb-4">Reserva tu vuelo</h1>
+        <TicketIcon className="w-10 h-10" />
+      </div>
+
+    <div className="max-w-6xl -top-24 mx-auto  p-4 bg-gray-100 rounded-b-xl ">
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 font-semibold">Nombre:</label>
-          <input
-            type="text"
-            id="name"
-            className="w-full px-3 py-2 border rounded-md"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+        
+        <div className="py-2">
+
+        <input
+          id="draft"
+          className="peer/draft"
+          type="radio"
+          name="status"
+          checked
+        />
+        <label className=" px-2  py-2">Solo ida</label>
+
+        <input
+          id="published"
+          className="peer/published"
+          type="radio"
+          name="status"
+        />
+        <label className="px-2  py-2">Ida y vuelta</label>
         </div>
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-semibold">Email:</label>
-          <input
-            type="email"
-            id="email"
-            className="w-full px-3 py-2 border rounded-md"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+
+        <div className=" flex flex-col md:flex-row">
+          
+          <div className="md:w-1/4 mb-4">
+            <label htmlFor="name" className="block text-gray-700 font-semibold">
+              Desde:
+            </label>
+            <select id="select" className="w-auto px-10 py-2 border rounded-md " >
+              <option value="">Selecciona</option>
+              <option value="english">Caracas</option>
+            </select>
+
+          </div>
+          <div className="md:w-1/4 mb-4">
+            <label htmlFor="name" className="block text-gray-700 font-semibold">
+              Hacia:
+            </label>
+            <select id="select" className="w-auto px-10 py-2 border rounded-md " >
+              <option value="">Selecciona</option>
+              <option value="english">Caracas</option>
+            </select>
+          </div>
+
+          <div className="md:w-1/4 mb-4">
+            <label className="block text-gray-700 font-semibold">
+              Calendario:
+            </label>
+            <input
+              type="date"
+              id="date"
+              className="w-auto px-8 py-2 border rounded-md"
+              required
+            />
+          </div>
+
+          <div className="md:w-1/4 mb-4">
+            <label className="block text-gray-700 font-semibold">
+              Cuantos viajan:
+            </label>
+            <input
+              type="number"
+              id="date"
+              className="w-auto px-3 py-2 border rounded-md"
+              required
+            />
+
+            {/* <calendar-range months="2">
+  <div className="flex">
+    <calendar-month></calendar-month>
+    <calendar-month offset="1"></calendar-month>
+  </div>
+</calendar-range> */}
+          </div>
+          <div className="md:w-1/4 mb-4">
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-semibold"
+            >
+              Correo electrónico:
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="w-auto px-3 py-2 border rounded-md"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
         </div>
-        <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-700 font-semibold">Mensaje:</label>
-          <textarea
-            id="message"
-            className="w-full px-3 py-2 border rounded-md"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          ></textarea>
+
+        <div className="text-center">
+
+        <button
+          type="submit"
+          className="bg-green-400 text-white px-6 py-2 rounded-lg"
+        >
+          Reservar
+        </button>
         </div>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Enviar</button>
       </form>
+    </div>
     </div>
   );
 }
