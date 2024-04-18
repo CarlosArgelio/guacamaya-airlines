@@ -6,6 +6,8 @@
   "scripts": {
     "start": "tsc && node dist/app.js",
     "start:dev": "nodemon index.ts",
+    "migration:generate": "typeorm migration:create",
+    "migration:run": "",
     "test": "jest",
     "test:e2e": "jest --verbose --detectOpenHandles --forceExit --runInBand"
   },

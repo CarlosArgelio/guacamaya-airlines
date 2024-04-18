@@ -1,8 +1,8 @@
 import { DataSource } from 'typeorm'
 
-import { Reservations } from './entity/reservation'
-import { Destinations } from './entity/destination'
-import { Airports } from './entity/airport'
+import { Reservations } from './entity/reservation.entity'
+import { Destinations } from './entity/destination.entity'
+import { Airports } from './entity/airport.entity'
 
 import { config } from './../configuration/config'
 
