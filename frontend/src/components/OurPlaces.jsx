@@ -1,16 +1,25 @@
 
+import { Roraima } from "../assets/index";
+import { Mochima } from "../assets/index";
+import { Merida } from "../assets/index";
+import { Morrocoy } from "../assets/index";
+
+import { LosRoques } from "../assets/index";
+import { Margarita } from "../assets/index";
+import { Medanos } from "../assets/index";
+import { Puerto } from "../assets/index";
 
 // eslint-disable-next-line react/prop-types
 function Card({ imageSrc, title, description }) {
   return (
-    <div className="w-full md:w-1/4 px-10 mb-10">
+    <div className="w-full md:w-1/4 px-6 mb-10">
       <div className="relative">
         <img src={imageSrc} alt={title} className="w-50 h-80 rounded-xl" />
         <div className="absolute inset-0 bg-black rounded-xl opacity-0 hover:opacity-75 transition duration-300">
           <div className="absolute inset-0 flex justify-center items-center">
             <div className="text-center">
               <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
-              <p className="text-gray-200">{description}</p>
+              <p className="text-gray-200 px-5 text-justify">{description}</p>
             </div>
           </div>
         </div>
@@ -22,44 +31,44 @@ function Card({ imageSrc, title, description }) {
 function OurPlaces() {
   const cards = [
     {
-      title: 'Card 1',
-      description: 'Descripción de la tarjeta 1',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Roraima',
+      description: 'Aventúrate en el Tepuy Roraima, la cima más alta del Parque Nacional Canaima, un lugar místico donde podrás contemplar majestuosas cascadas, ríos de aguas cristalinas y formaciones rocosas únicas en el mundo.',
+      imageSrc: Roraima,
     },
     {
-      title: 'Card 2',
-      description: 'Descripción de la tarjeta 2',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Mochima',
+      description: 'Navega por el Parque Nacional Mochima, un archipiélago de 34 islas paradisíacas, donde podrás disfrutar de playas de arena blanca, aguas turquesas y una gran variedad de deportes acuáticos.',
+      imageSrc: Mochima,
     },
     {
-      title: 'Card 3',
-      description: 'Descripción de la tarjeta 3',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Merida',
+      description: 'Conoce la Ciudad de los Caballeros, Mérida, una ciudad colonial rodeada de montañas andinas, donde podrás visitar el Pico Bolívar, la montaña más alta de Venezuela, y disfrutar de encantadores pueblos y paisajes exuberantes.',
+      imageSrc: Merida,
     },
     {
-      title: 'Card 4',
-      description: 'Descripción de la tarjeta 4',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Morrocoy',
+      description: 'Relájate en el Parque Nacional Morrocoy, un paraíso natural compuesto por 150 cayos de arena blanca y aguas cristalinas, donde podrás practicar snorkeling, buceo y disfrutar de la tranquilidad del mar caribeño.',
+      imageSrc: Morrocoy,
     },
     {
-      title: 'Card 5',
-      description: 'Descripción de la tarjeta 5',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Margarita',
+      description: 'Disfruta de la Isla de Margarita, conocida como la Perla del Caribe, un destino turístico por excelencia, donde podrás encontrar playas de ensueño, una vibrante vida nocturna y una gran variedad de actividades para toda la familia.',
+      imageSrc: Margarita,
     },
     {
-      title: 'Card 6',
-      description: 'Descripción de la tarjeta 6',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Puerto la cruz',
+      description: 'Visita Puerto La Cruz, una ciudad costera con un hermoso malecón, donde podrás disfrutar de una deliciosa gastronomía local, realizar compras en mercados artesanales y visitar lugares históricos como el Castillo de San Felipe de la Barra.',
+      imageSrc: Puerto,
     },
     {
-      title: 'Card 7',
-      description: 'Descripción de la tarjeta 7',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Medanos de Coro',
+      description: 'Adéntrate en los Médanos de Coro, un desierto de dunas de arena blanca que se extienden por más de 15.000 hectáreas, donde podrás realizar actividades como paseos en camello, sandboard y disfrutar de atardeceres inolvidables.',
+      imageSrc: Medanos,
     },
     {
-      title: 'Card 8',
-      description: 'Descripción de la tarjeta 8',
-      imageSrc: 'https://via.placeholder.com/300',
+      title: 'Los roques',
+      description: 'Descubre Los Roques, un archipiélago de 49 islas de origen coralino, considerado como uno de los parques nacionales más bellos del mundo, donde podrás disfrutar de playas vírgenes, aguas cristalinas y una gran variedad de vida marina.',
+      imageSrc: LosRoques,
     },
   ];
 
