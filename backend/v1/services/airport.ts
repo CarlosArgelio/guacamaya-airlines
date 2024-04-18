@@ -1,3 +1,4 @@
+import { uuid } from 'uuidv4'
 import { faker } from '@faker-js/faker'
 
 export class DataFakeAirPort {
@@ -40,7 +41,9 @@ export class AirPortService {
    * @returns The airport object that was added to the database array.
    */
   create(data: any) {
-    this.database.push(data)
+    const id = uuid()
+    const newData = { ...data, id }
+    this.database.push(newData)
     return data
   }
 
