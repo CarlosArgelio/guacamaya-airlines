@@ -1,4 +1,4 @@
-import { Avila } from "../assets/index";
+import { Avila } from "../assets";
 
 
 function Banner() {

@@ -1,13 +1,12 @@
+import { Roraima } from "../assets";
+import { Mochima } from "../assets";
+import { Merida } from "../assets";
+import { Morrocoy } from "../assets";
 
-import { Roraima } from "../assets/index";
-import { Mochima } from "../assets/index";
-import { Merida } from "../assets/index";
-import { Morrocoy } from "../assets/index";
-
-import { LosRoques } from "../assets/index";
-import { Margarita } from "../assets/index";
-import { Medanos } from "../assets/index";
-import { Puerto } from "../assets/index";
+import { LosRoques } from "../assets";
+import { Margarita } from "../assets";
+import { Medanos } from "../assets";
+import { Puerto } from "../assets";
 
 // eslint-disable-next-line react/prop-types
 function Card({ imageSrc, title, description }) {

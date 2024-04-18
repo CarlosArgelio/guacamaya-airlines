@@ -1,4 +1,4 @@
-import { Linkedin } from "../assets/index";
+import { Linkedin } from "../assets";
 
 function Footer() {
   return (
