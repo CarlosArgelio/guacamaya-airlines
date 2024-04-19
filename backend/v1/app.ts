@@ -30,6 +30,7 @@ export const createApp = () => {
   app.use('/api/v1', networkRouter)
 
   app.use(logErrors)
+
   app.use(boomErrorHandler)
   app.use(errorHandler)
 

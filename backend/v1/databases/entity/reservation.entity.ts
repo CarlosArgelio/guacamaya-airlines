@@ -30,4 +30,7 @@ export class Reservations extends BaseEntity {
 
   @Column()
   children!: number
+
+  @Column()
+  status!: boolean
 }

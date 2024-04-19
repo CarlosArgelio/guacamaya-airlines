@@ -1,3 +1,5 @@
 import { AppDataSource } from './config'
 
-export { AppDataSource }
+import { Reservations } from './entity/reservation.entity'
+
+export { AppDataSource, Reservations }
