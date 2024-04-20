@@ -9,10 +9,13 @@ export class ReservationService {
   ) {}
 
   async createReservation(reservation: any) {
-    const id = v4()
-    const newReservation = { ...reservation, id }
-    // this.database.push(newReservation)
-    return reservation
+    const newReservation = this.reservation.create(reservation)
+    const saveData = await this.reservation.save(newReservation)
+    console.log(
+      '🚀 ~ ReservationService ~ createReservation ~ saveData:',
+      saveData,
+    )
+    return saveData
   }
 
   async updateReservation(id: string, changes: any) {

@@ -8,7 +8,15 @@ export class ReservationController {
 
   async create(data: any) {
     const { email } = data
-    const reservation = await this.reservationService.createReservation(data)
+
+    const newReservation = {
+      ...data,
+      dateStart: new Date(data.dateStart * 1000).toISOString(),
+      dateEnd: new Date(data.dateEnd * 1000).toISOString(),
+    }
+
+    const reservation =
+      await this.reservationService.createReservation(newReservation)
     await this.emailService.sendEmail(
       email,
       'Guacamaya Airlines - Felicidades haz reservado exitosamente un vuelo',
