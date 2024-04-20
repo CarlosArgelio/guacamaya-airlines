@@ -1,9 +1,15 @@
+import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
 
 function Faqs() {
   return (
     <div className="max-w-6xl mx-auto py-8">
+       <div className="flex">
+
       <h2 className="text-3xl font-semibold mb-4">Preguntas Frecuentes</h2>
+      <QuestionMarkCircleIcon className="w-10 h-10 "></QuestionMarkCircleIcon>
+       </div>
+
       <div className="divide-y divide-gray-300">
         {
           FAQS.map(faq => (
