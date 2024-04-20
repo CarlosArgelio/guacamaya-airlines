@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
+  Timestamp,
 } from 'typeorm'
 
 @Entity()
@@ -36,18 +37,29 @@ export class Reservations {
   @Column({ type: 'varchar', length: 100 })
   to!: string
 
-  @Column()
-  dateStart!: Date
+  @Column({
+    type: 'timestamp',
+  })
+  dateStart!: string
 
-  @Column()
-  dateEnd!: Date
+  @Column({
+    type: 'timestamp',
+  })
+  dateEnd!: string
 
-  @Column()
+  @Column({
+    type: 'int',
+  })
   adults!: number
 
-  @Column()
+  @Column({
+    type: 'int',
+  })
   children!: number
 
-  @Column()
+  @Column({
+    type: 'boolean',
+    default: false,
+  })
   status!: boolean
 }
