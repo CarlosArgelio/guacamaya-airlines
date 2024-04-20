@@ -6,11 +6,11 @@ import { createReservation, confirmReservation, findId } from './../schemas'
 
 export const reserver = Router()
 
-const create = (req: Request, res: Response, next: NextFunction) => {
+const create = async (req: Request, res: Response, next: NextFunction) => {
   const data = req.body
   try {
     const controller = new ReservationController()
-    const newReserver = controller.create(data)
+    const newReserver = await controller.create(data)
 
     success(req, res, newReserver, 201)
   } catch (error) {
@@ -18,13 +18,13 @@ const create = (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-const update = (req: Request, res: Response, next: NextFunction) => {
-  const { status } = req.body
+const update = async (req: Request, res: Response, next: NextFunction) => {
+  const data = req.body
   const { id } = req.params
 
   try {
     const controller = new ReservationController()
-    const updated = controller.update(id, status)
+    const updated = await controller.update(id, data)
     success(req, res, updated, 200)
   } catch (error) {
     next(error)

@@ -11,15 +11,19 @@ export class ReservationService {
   async createReservation(reservation: any) {
     const newReservation = this.reservation.create(reservation)
     const saveData = await this.reservation.save(newReservation)
-    console.log(
-      '🚀 ~ ReservationService ~ createReservation ~ saveData:',
-      saveData,
-    )
     return saveData
   }
 
   async updateReservation(id: string, changes: any) {
-    const update = await this.reservation.update(id, changes)
+    const reservation = await this.reservation.findOneBy({ id })
+    if (!reservation) {
+      throw new Error('Reservation not found')
+    }
+    const changeData = {
+      ...reservation,
+      ...changes,
+    }
+    const update = await this.reservation.update(reservation, changeData)
     return update
   }
 }

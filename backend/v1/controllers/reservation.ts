@@ -108,6 +108,6 @@ export class ReservationController {
   }
 
   async update(id: string, changes: any) {
-    return this.reservationService.updateReservation(id, changes)
+    return await this.reservationService.updateReservation(id, changes)
   }
 }
