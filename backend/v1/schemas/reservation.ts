@@ -18,8 +18,10 @@ export const createReservation = Joi.object({
   to: to.required(),
   dateStart: dateStart.required(),
   dateEnd: dateEnd.required(),
-  people: Joi.object({
-    adults: adults.required(),
-    children: children.required(),
-  }),
+  adults: adults.required(),
+  children: children.required(),
+})
+
+export const confirmReservation = Joi.object({
+  status: Joi.boolean().required(),
 })

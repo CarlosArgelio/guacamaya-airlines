@@ -12,7 +12,7 @@ export const success = (
     data: message,
   }
 
-  res.json(statusCode).json(response)
+  res.status(statusCode).json(response)
 }
 
 export const error = (
@@ -27,5 +27,5 @@ export const error = (
     data: message,
   }
 
-  res.json(statusCode).json(response)
+  res.status(statusCode).json(response)
 }

@@ -6,9 +6,35 @@ export class ReservationController {
     private emailService = new ResendService(),
   ) {}
 
+  async getAll() {
+    let response: any[] = []
+
+    const reservations = await this.reservationService.getAllReservations()
+
+    reservations.map((reserver) =>
+      response.push({
+        id: reserver.id,
+        departureTime: `${new Date(reserver.dateStart).getHours()}:${new Date(reserver.dateStart).getMinutes()}`,
+        destination: reserver.to,
+        code: 'code - 01',
+        door: '01',
+        status: reserver.status,
+      }),
+    )
+    return response
+  }
+
   async create(data: any) {
     const { email } = data
-    const reservation = await this.reservationService.createReservation(data)
+
+    const newReservation = {
+      ...data,
+      dateStart: new Date(data.dateStart * 1000).toISOString(),
+      dateEnd: new Date(data.dateEnd * 1000).toISOString(),
+    }
+
+    const reservation =
+      await this.reservationService.createReservation(newReservation)
     await this.emailService.sendEmail(
       email,
       'Guacamaya Airlines - Felicidades haz reservado exitosamente un vuelo',
@@ -97,5 +123,9 @@ export class ReservationController {
       `,
     )
     return reservation
+  }
+
+  async update(id: string, changes: any) {
+    return await this.reservationService.updateReservation(id, changes)
   }
 }

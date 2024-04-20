@@ -1,3 +1,6 @@
 import { AppDataSource } from './config'
 
-export { AppDataSource }
+import { Reservations } from './entity/reservation.entity'
+import { Airports } from './entity/airport.entity'
+
+export { AppDataSource, Reservations, Airports }
