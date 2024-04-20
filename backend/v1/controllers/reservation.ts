@@ -6,6 +6,11 @@ export class ReservationController {
     private emailService = new ResendService(),
   ) {}
 
+  async getAll() {
+    const reservations = await this.reservationService.getAllReservations()
+    return reservations
+  }
+
   async create(data: any) {
     const { email } = data
 

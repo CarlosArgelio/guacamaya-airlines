@@ -6,6 +6,17 @@ import { createReservation, confirmReservation, findId } from './../schemas'
 
 export const reserver = Router()
 
+const getAll = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const controller = new ReservationController()
+    const reservations = await controller.getAll()
+
+    success(req, res, reservations, 200)
+  } catch (error) {
+    next(error)
+  }
+}
+
 const create = async (req: Request, res: Response, next: NextFunction) => {
   const data = req.body
   try {
@@ -38,3 +49,4 @@ reserver.put(
   schemaHandler(confirmReservation, Properties.BODY),
   update,
 )
+reserver.get('/flight-plans', getAll)

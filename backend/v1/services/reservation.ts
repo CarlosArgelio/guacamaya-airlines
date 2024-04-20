@@ -1,12 +1,16 @@
 import { uuid as v4 } from 'uuidv4'
 import { faker } from '@faker-js/faker'
 
-import { AppDataSource, Reservations } from './../databases'
+import { AppDataSource, Reservations } from '../databases'
 
 export class ReservationService {
   constructor(
     private readonly reservation = AppDataSource.getRepository(Reservations),
   ) {}
+
+  async getAllReservations() {
+    return await this.reservation.find()
+  }
 
   async createReservation(reservation: any) {
     const newReservation = this.reservation.create(reservation)
@@ -19,11 +23,9 @@ export class ReservationService {
     if (!reservation) {
       throw new Error('Reservation not found')
     }
-    const changeData = {
-      ...reservation,
-      ...changes,
-    }
-    const update = await this.reservation.update(reservation, changeData)
-    return update
+
+    reservation.status = changes.status
+    const saveData = await this.reservation.save(reservation)
+    return saveData
   }
 }

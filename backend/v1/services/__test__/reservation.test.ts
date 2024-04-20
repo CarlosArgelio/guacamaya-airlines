@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-import { ReservationService } from './../reservations'
+import { ReservationService } from '../reservation'
 
 describe('ReservationService', () => {
   describe('createReservation', () => {
