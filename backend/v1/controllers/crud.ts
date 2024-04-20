@@ -1,17 +1,17 @@
 import boom from '@hapi/boom'
-import { AirPortService, DestinationService } from '../services'
+import { AirPortService } from '../services'
 
 /**
  * The Controller` class is responsible for handling requests related to airports.
  * It interacts with the `AirPortService` class to perform CRUD operations on data.
  */
 export class CRUDController {
-  public readonly services: AirPortService | DestinationService
+  public readonly services: AirPortService
   /**
    * Creates an instance of `AirPortController`.
    * @param airportService An instance of the `AirPortService` class used to interact with the data in the database.
    */
-  constructor(services: AirPortService | DestinationService) {
+  constructor(services: AirPortService) {
     this.services = services
   }
 
