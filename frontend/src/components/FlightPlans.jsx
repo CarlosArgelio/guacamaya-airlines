@@ -1,11 +1,17 @@
+import { CalendarIcon } from "@heroicons/react/24/outline";
 
 function Table() {
     return (
-      <div className="container max-w-6xl mx-auto py-8">
-        <h1 className="text-3xl font-semibold mb-8">Planes de vuelo</h1>
-        <table className="table-auto w-full border-collapse border border-gray-400">
+      <div className="container max-w-6xl mx-auto py-8 ">
+        <div className="flex">
+
+          <h1 className="text-3xl font-semibold mb-8">Planes de vuelo</h1>
+
+          <CalendarIcon className="w-10 h-10 "></CalendarIcon>
+        </div>
+        <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
-            <tr className="bg-gray-200">
+            <tr className="bg-gray-900 text-yellow-300">
               <th className="px-4 py-2 text-left">Hora de Salida</th>
               <th className="px-4 py-2 text-left">Destino</th>
               <th className="px-4 py-2 text-left">Código de vuelo</th>
@@ -17,7 +23,7 @@ function Table() {
             {
               FlightPlans.map(flightPlan => (
 
-              <tr key={flightPlan.id} className="bg-white">
+              <tr key={flightPlan.id} className="bg-gray-900 text-yellow-300">
                 <td className="border px-4 py-2">{flightPlan.leave}</td>
                 <td className="border px-4 py-2">{flightPlan.destination}</td>
                 <td className="border px-4 py-2">{flightPlan.code}</td>
