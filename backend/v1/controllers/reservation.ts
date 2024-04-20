@@ -7,8 +7,21 @@ export class ReservationController {
   ) {}
 
   async getAll() {
+    let response: any[] = []
+
     const reservations = await this.reservationService.getAllReservations()
-    return reservations
+
+    reservations.map((reserver) =>
+      response.push({
+        id: reserver.id,
+        departureTime: `${new Date(reserver.dateStart).getHours()}:${new Date(reserver.dateStart).getMinutes()}`,
+        destination: reserver.to,
+        code: 'code - 01',
+        door: '01',
+        status: reserver.status,
+      }),
+    )
+    return response
   }
 
   async create(data: any) {
