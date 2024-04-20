@@ -13,58 +13,49 @@ function Form() {
   };
 
   return (
-    <div className="relative max-w-6xl -top-24 mx-auto rounded-b-xl shadow-xl">
-
-      <div className="flex rounded-t-xl pt-2 justify-center bg-green-400 drop-shadow-lg">
-        <h1 className="text-3xl font-bold mb-4">Reserva tu vuelo</h1>
-        <TicketIcon className="w-10 h-10" />
-      </div>
-
-    <div className="max-w-6xl -top-24 mx-auto  p-4 bg-gray-100 rounded-b-xl ">
+    <div className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl ">
+    <div className="flex rounded-t-xl pt-2 justify-center bg-green-400 drop-shadow-lg">
+      <h1 className="text-3xl font-bold mb-4">Reserva tu vuelo</h1>
+      <TicketIcon className="w-10 h-10" />
+    </div>
+    <div className="max-w-6xl p-4 bg-gray-100 rounded-b-xl">
       <form onSubmit={handleSubmit}>
-        
         <div className="py-2">
-
-        <input
-          id="draft"
-          className="peer/draft"
-          type="radio"
-          name="status"
-          checked
-        />
-        <label className=" px-2  py-2">Solo ida</label>
-
-        <input
-          id="published"
-          className="peer/published"
-          type="radio"
-          name="status"
-        />
-        <label className="px-2  py-2">Ida y vuelta</label>
+          <input
+            id="draft"
+            className="peer/draft"
+            type="radio"
+            name="status"
+            checked
+          />
+          <label className="px-2 py-2">Solo ida</label>
+          <input
+            id="published"
+            className="peer/published"
+            type="radio"
+            name="status"
+          />
+          <label className="px-2 py-2">Ida y vuelta</label>
         </div>
-
-        <div className=" flex flex-col md:flex-row">
-          
-          <div className="md:w-1/4 mb-4">
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/4 mb-4 ">
             <label htmlFor="name" className="block text-gray-700 font-semibold">
               Desde:
             </label>
-            <select id="select" className="w-auto px-10 py-2 border rounded-md " >
+            <select id="select" className="w-full px-4 py-2 border rounded-md">
               <option value="">Selecciona</option>
-              <option value="english">Caracas</option>
+              <option value="caracas">Caracas</option>
             </select>
-
           </div>
           <div className="md:w-1/4 mb-4">
             <label htmlFor="name" className="block text-gray-700 font-semibold">
               Hacia:
             </label>
-            <select id="select" className="w-auto px-10 py-2 border rounded-md " >
+            <select id="select" className="w-full px-4 py-2 border rounded-md">
               <option value="">Selecciona</option>
-              <option value="english">Caracas</option>
+              <option value="caracas">Caracas</option>
             </select>
           </div>
-
           <div className="md:w-1/4 mb-4">
             <label className="block text-gray-700 font-semibold">
               Calendario:
@@ -72,11 +63,10 @@ function Form() {
             <input
               type="date"
               id="date"
-              className="w-auto px-8 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md"
               required
             />
           </div>
-
           <div className="md:w-1/4 mb-4">
             <label className="block text-gray-700 font-semibold">
               Cuantos viajan:
@@ -84,47 +74,35 @@ function Form() {
             <input
               type="number"
               id="date"
-              className="w-auto px-3 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md"
               required
             />
-
-            {/* <calendar-range months="2">
-  <div className="flex">
-    <calendar-month></calendar-month>
-    <calendar-month offset="1"></calendar-month>
-  </div>
-</calendar-range> */}
           </div>
           <div className="md:w-1/4 mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-semibold"
-            >
+            <label htmlFor="email" className="block text-gray-700 font-semibold">
               Correo electrónico:
             </label>
             <input
               type="email"
               id="email"
-              className="w-auto px-3 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
         </div>
-
         <div className="text-center">
-
-        <button
-          type="submit"
-          className="bg-green-400 text-white px-6 py-2 rounded-lg"
-        >
-          Reservar
-        </button>
+          <button
+            type="submit"
+            className="bg-green-400 text-white px-6 py-2 rounded-lg"
+          >
+            Reservar
+          </button>
         </div>
       </form>
     </div>
-    </div>
+  </div>
   );
 }
 
