@@ -1,9 +1,11 @@
 {
+  "banner": {
+    "text": "Te enviamos al paraíso"
+  },
   "navBar": {
     "reserver": "Reservar",
     "destination": "Destino",
     "questions": "Preguntas",
     "aboutWe": "Sobre nosotros"
-  },
-  "bannerText": "Te enviamos al paraíso"
+  }
 }

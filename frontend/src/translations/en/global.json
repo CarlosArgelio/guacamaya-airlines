@@ -1,9 +1,11 @@
 {
+  "banner": {
+    "text": "We send you to paradise"
+  },
   "navBar": {
     "reserver": "Reserver",
     "destination": "Destiny",
     "questions": "Questions",
     "aboutWe": "About We"
-  },
-  "bannerText": "We send you to paradise"
+  }
 }
