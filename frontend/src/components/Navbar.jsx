@@ -57,11 +57,11 @@ function Navbar() {
         </div>
         {isOpen && (
           <div className="md:hidden mt-2 ">
-            <Link to="reservation" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Reserva</Link>
-            <Link to="ourPlaces" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Destinos</Link>
-            <Link to="FAQs" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Preguntas</Link>
-            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Planes de vuelo</Link>
-            <Link to="footer" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Sobre nosotros</Link>
+            <Link to="reservation" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">Reserva</Link>
+            <Link to="ourPlaces" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">Destinos</Link>
+            <Link to="FAQs" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">Preguntas</Link>
+            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">Planes de vuelo</Link>
+            <Link to="footer" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">Sobre nosotros</Link>
           </div>
         )}
       </div>
