@@ -24,4 +24,18 @@ jobs:
         run: |
           npm run build
 
+      - name: artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: "upload artifacts"
+          path: dist/
 
+      - name: S3 Deployment
+        uses:  my_repo/s3-sync-action@v0.5.1
+        with:
+         args: --acl public-read --follow-symlinks --delete  
+        env:
+         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         AWS_S3_BUCKET: s3://www.guacamaya-airline.com
+         #DISTRIBUTION: ${{ secrets.CDN_DISTRIBUTN_ID_DEV }}
