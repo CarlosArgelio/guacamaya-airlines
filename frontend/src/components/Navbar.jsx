@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation("global");
 
   const toggleMenu = () => {
@@ -49,10 +50,10 @@ function Navbar() {
         </div>
         {isOpen && (
           <div className="md:hidden mt-2 ">
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Reserva</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Destinos</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Preguntas</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Sobre nosotros</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.reserver')}</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.destination')}</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.questions')}</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.aboutWe')}</a>
           </div>
         )}
       </div>
