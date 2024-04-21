@@ -1,0 +1,37 @@
+name: CI/CD Frontend React (Guacamaya Airline)
+
+on:
+  push:
+    branches: [ feature/cicd_frontend ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configurar Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: |
+          npm install
+
+      - name: Generar build
+        run: |
+          npm run build
+
+      - name: Subir build a S3
+        uses: aws-actions/aws-upload@v2.1.2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1  # Region que usamos en AWS
+          bucket: s3://guacamaya-airlines.com/
+          object-key: dist/  # Carpeta que contiene el build
+          path: dist/        # Ruta local del directorio build
+          acl: public-read
+
