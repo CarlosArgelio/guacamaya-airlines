@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { getAllFligthPlans } from "./../services/api";
 
 function Table() {
+
   const [fligth, setFligth] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation("global");
@@ -15,11 +16,12 @@ function Table() {
   if (!fligth) return null;
 
   return (
-    <div className="container max-w-6xl mx-auto py-8 ">
+    <div id="flightPlans" className="container max-w-6xl mx-auto py-8 ">
       <div className="flex">
-        <h1 className="text-3xl font-semibold mb-8">
+        <h1 className="text-3xl font-semibold mb-8 ml-4 mb:mr-4">
           {t("table.fligthPlans")}
         </h1>
+
 
         <CalendarIcon className="w-10 h-10 "></CalendarIcon>
       </div>

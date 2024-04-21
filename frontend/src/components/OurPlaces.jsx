@@ -33,25 +33,22 @@ function OurPlaces() {
   const [t, i18n] = useTranslation("global");
 
   return (
-    <div className="container max-w-6xl mx-auto py-8">
-      <div className="flex">
-        <h1 className="text-3xl font-semibold mb-8">
-          {t("ourPlaces.weDestination")}
-        </h1>
-        <GlobeAmericasIcon className="w-10 h-10"></GlobeAmericasIcon>
-      </div>
-      <div className="flex flex-wrap -mx-4 justify-center">
-        {images.map((image, index) => {
-          let i = index + 1;
-          return (
-            <Card
-              key={index}
-              title={t(`ourPlaces.destination${i}`)}
-              description={t(`ourPlaces.description${i}`)}
-              imageSrc={image}
-            />
-          );
-        })}
+
+    <div id="ourPlaces" className="container max-w-6xl mx-auto py-8  ">
+        <div className="flex">
+
+      <h1 className="text-3xl font-semibold mb-8 ml-4">{t("ourPlaces.weDestination")}</h1>
+      <GlobeAmericasIcon className="w-10 h-10"></GlobeAmericasIcon>
+        </div>
+      <div className="flex flex-wrap mx-4 justify-center">
+        {cards.map((card, index) => (
+          <Card
+            key={index}
+            title={t(`ourPlaces.destination${i}`)}
+            description={t(`ourPlaces.description${i}`)}
+            imageSrc={image}
+          />
+        ))}
       </div>
     </div>
   );

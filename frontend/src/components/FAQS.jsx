@@ -7,10 +7,12 @@ function Faqs() {
     const [t, i18n] = useTranslation("global");
 
   return (
-    <div className="max-w-6xl mx-auto py-8">
+    <div id="FAQs" className="max-w-6xl mx-auto py-8 " >
        <div className="flex">
 
-      <h2 className="text-3xl font-semibold mb-4">{t(`faq.frequentQuestions`)}</h2>
+
+      <h2 className="text-3xl font-semibold mb-4 mb:ml-4">{t(`faq.frequentQuestions`)}</h2>
+
       <QuestionMarkCircleIcon className="w-10 h-10 "></QuestionMarkCircleIcon>
        </div>
 
