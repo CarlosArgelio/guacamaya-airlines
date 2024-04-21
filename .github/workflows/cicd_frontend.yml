@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: aws-actions/aws-upload@v2.1.2 
+
       - name: Configurar Node.js 18
         uses: actions/setup-node@v3
         with:
