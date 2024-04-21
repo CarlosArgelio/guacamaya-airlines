@@ -1,4 +1,16 @@
 {
+  "form": {
+    "reserveYourFligt": "Reserva tu vuelo",
+    "oneWay": "Solo ida",
+    "roudTrip": "Ida y vuelta",
+    "select": "Selecciona",
+    "from": "Desde",
+    "to": "Hasta",
+    "calendar": "Calendario",
+    "howManyTravel": "Cuantos viajan",
+    "email": "Correo Electronico",
+    "CTAButtom": "Reservar"
+  },
   "footer": {
     "aboutWe": "Sobre nosotros",
     "description": "En Guacamaya Airlines, somos más que una simple aerolínea, somos un puente que te conecta con rincones más paradisíacos de Venezuela. Con una trayectoria impecable y un equipo apasionado por el vuelo, nos enorgullecemos de ofrecer una experiencia de viaje incomparable, donde la comodidad, la seguridad y la atención personalizada son nuestros pilares fundamentales.",
