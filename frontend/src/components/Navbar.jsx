@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { Logo } from "../assets/index";
-import { MoonIcon } from "@heroicons/react/24/solid";
 import { Bars4Icon } from "@heroicons/react/24/solid";
+import { Translation } from "./Translation";
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [t, i18n] = useTranslation("global");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,27 +23,21 @@ function Navbar() {
           </div>
           <div className="hidden md:flex items-center">
             <a href="#" className="text-black text-lg font-bold px-4  py-2">
-              Reserva
+              {t('navBar.reserver')}
             </a>
             <a href="#" className="text-black text-lg font-bold px-4  py-2">
-              Destinos
+              {t('navBar.destination')}
             </a>
             <a href="#" className="text-black text-lg font-bold px-4 py-2">
-              Preguntas
+              {t('navBar.questions')}
             </a>
             <a href="#" className="text-black text-lg font-bold px-4  py-2">
-              Sobre nosotros
+              {t('navBar.aboutWe')}
             </a>
           </div>
        
 
-          <div className="flex items-center">
-            <MoonIcon className="h-10 w-10 mx-4 hover:text-yellow-400 text-gray-700 md:block" />
-            <select id="select" className="bg-white border border-gray-300 py-2 px-2 rounded-md focus:outline-none focus:border-yellow-500">
-              <option value="">Español</option>
-              <option value="english">English</option>
-            </select>
-          </div>
+          <Translation />
 
           <div className="flex md:hidden">
             <button onClick={toggleMenu} className="text-gray-700 hover:text-black focus:outline-none">
@@ -53,10 +50,10 @@ function Navbar() {
         </div>
         {isOpen && (
           <div className="md:hidden mt-2 ">
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Reserva</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Destinos</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Preguntas</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Sobre nosotros</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.reserver')}</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.destination')}</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.questions')}</a>
+            <a href="#" className="block text-center py-2 px-4 text-black font-bold">{t('navBar.aboutWe')}</a>
           </div>
         )}
       </div>

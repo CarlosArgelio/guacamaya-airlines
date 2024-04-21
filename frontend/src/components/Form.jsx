@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { TicketIcon } from "@heroicons/react/24/outline";
 import "cally";
+import { useTranslation } from "react-i18next";
 
 import { getAllAirports } from "./../services/api"
 
@@ -8,6 +9,8 @@ function Form() {
   const [airPorts, setAirPort] = useState(null)
   // const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  // eslint-disable-next-line no-unused-vars
+  const [t, i18n] = useTranslation("global");
 
   useEffect(() => {
     getAllAirports(setAirPort)
@@ -15,7 +18,6 @@ function Form() {
 
   if (!airPorts) return null;
 
-  console.log(airPorts)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,7 +28,7 @@ function Form() {
   return (
     <div className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl ">
     <div className="flex rounded-t-xl pt-2 justify-center bg-green-400 drop-shadow-lg">
-      <h1 className="text-3xl font-bold mb-4">Reserva tu vuelo</h1>
+      <h1 className="text-3xl font-bold mb-4">{t('form.reserveYourFligt')}</h1>
       <TicketIcon className="w-10 h-10" />
     </div>
     <div className="max-w-6xl p-4 bg-gray-100 rounded-b-xl">
@@ -39,22 +41,22 @@ function Form() {
             name="status"
             checked
           />
-          <label className="px-2 py-2">Solo ida</label>
+          <label className="px-2 py-2">{t('form.oneWay')}</label>
           <input
             id="published"
             className="peer/published"
             type="radio"
             name="status"
           />
-          <label className="px-2 py-2">Ida y vuelta</label>
+          <label className="px-2 py-2">{t('form.roudTrip')}</label>
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/4 mb-4 ">
             <label htmlFor="name" className="block text-gray-700 font-semibold">
-              Desde:
+            {t('form.from')}:
             </label>
             <select id="select" className="w-full px-4 py-2 border rounded-md">
-              <option value="">Selecciona</option>
+              <option value="">{t('form.select')}</option>
               {
                 airPorts.map(item => (
                   <>
@@ -66,10 +68,10 @@ function Form() {
           </div>
           <div className="md:w-1/4 mb-4">
             <label htmlFor="name" className="block text-gray-700 font-semibold">
-              Hacia:
+            {t('form.to')}:
             </label>
             <select id="select" className="w-full px-4 py-2 border rounded-md">
-              <option value="">Selecciona</option>
+              <option value="">{t('form.select')}</option>
               {
                 airPorts.map(item => (
                   <>
@@ -81,7 +83,7 @@ function Form() {
           </div>
           <div className="md:w-1/4 mb-4">
             <label className="block text-gray-700 font-semibold">
-              Calendario:
+            {t('form.calendar')}:
             </label>
             <input
               type="date"
@@ -92,7 +94,7 @@ function Form() {
           </div>
           <div className="md:w-1/4 mb-4">
             <label className="block text-gray-700 font-semibold">
-              Cuantos viajan:
+            {t('form.howManyTravel')}:
             </label>
             <input
               type="number"
@@ -103,7 +105,7 @@ function Form() {
           </div>
           <div className="md:w-1/4 mb-4">
             <label htmlFor="email" className="block text-gray-700 font-semibold">
-              Correo electrónico:
+            {t('form.email')}:
             </label>
             <input
               type="email"
@@ -120,7 +122,7 @@ function Form() {
             type="submit"
             className="bg-green-400 text-white px-6 py-2 rounded-lg"
           >
-            Reservar
+            {t('form.CTAButtom')}
           </button>
         </div>
       </form>
