@@ -1,4 +1,27 @@
 {
+  "faq": {
+    "frequentQuestions": "Preguntas frecuentes",
+    "faq1": {
+      "q": "¿Cuál es el equipaje permitido?",
+      "a": "Cada pasajero puede llevar una maleta de mano y una maleta facturada. Consulta nuestras políticas para obtener más detalles sobre el tamaño y el peso permitido."
+    },
+    "faq2": {
+      "q": "¿Cómo puedo realizar el check-in?",
+      "a": "Puedes realizar el check-in en línea a través de nuestra página web o aplicación móvil, o también en el mostrador de check-in del aeropuerto."
+    },
+    "faq3": {
+      "q": "¿Qué debo hacer si pierdo mi vuelo?",
+      "a": "Si pierdes tu vuelo, por favor contacta a nuestro personal en el aeropuerto para obtener asistencia. Dependiendo de la situación, es posible que podamos reprogramar tu vuelo sin cargo adicional."
+    },
+    "faq4": {
+      "q": "¿Puedo cambiar mi reserva?",
+      "a": "Sí, puedes cambiar tu reserva sujeto a disponibilidad y tarifas adicionales. Te recomendamos que consultes nuestras políticas de cambio antes de realizar cualquier modificación."
+    },
+    "faq5": {
+      "q": "¿Qué debo hacer si tengo una pregunta adicional?",
+      "a": "Si tienes alguna pregunta adicional, no dudes en contactar a nuestro equipo de atención al cliente. Estamos aquí para ayudarte en todo lo que necesites."
+    }
+  },
   "banner": {
     "text": "Te enviamos al paraíso"
   },

@@ -1,4 +1,27 @@
 {
+  "faq": {
+    "frequentQuestions": "Frequently Asked Questions",
+    "faq1": {
+      "q": "What is the allowed baggage?",
+      "a": "Each passenger is allowed one carry-on bag and one checked bag. Please refer to our policies for more details on size and weight restrictions."
+    },
+    "faq2": {
+      "q": "How can I check in?",
+      "a": "You can check in online through our website or mobile app, or at the airport check-in counter."
+    },
+    "faq3": {
+      "q": "What should I do if I miss my flight?",
+      "a": "If you miss your flight, please contact our staff at the airport for assistance. Depending on the situation, we may be able to reschedule your flight without additional charges."
+    },
+    "faq4": {
+      "q": "Can I change my reservation?",
+      "a": "Yes, you can change your reservation subject to availability and additional fees. We recommend that you review our change policies before making any modifications."
+    },
+    "faq5": {
+      "q": "What should I do if I have an additional question?",
+      "a": "If you have any additional questions, please do not hesitate to contact our customer service team. We are here to assist you with anything you need."
+    }
+  },
   "banner": {
     "text": "We send you to paradise"
   },
