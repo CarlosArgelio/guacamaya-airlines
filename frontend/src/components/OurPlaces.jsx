@@ -41,14 +41,17 @@ function OurPlaces() {
       <GlobeAmericasIcon className="w-10 h-10"></GlobeAmericasIcon>
         </div>
       <div className="flex flex-wrap mx-4 justify-center">
-        {cards.map((card, index) => (
-          <Card
-            key={index}
-            title={t(`ourPlaces.destination${i}`)}
-            description={t(`ourPlaces.description${i}`)}
-            imageSrc={image}
-          />
-        ))}
+        {images.map((image, index) => {
+          let i = index + 1
+          return (
+            <Card
+              key={index}
+              title={t(`ourPlaces.destination${i}`)}
+              description={t(`ourPlaces.description${i}`)}
+              imageSrc={image}
+            />
+          )
+        })}
       </div>
     </div>
   );

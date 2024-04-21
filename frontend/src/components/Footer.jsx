@@ -30,7 +30,7 @@ function Footer() {
                 <Link to="FAQs" smooth={true} duration={900} >{t('faq.frequentQuestions')}</Link>
               </li> 
               <li className='hover:text-blue-400 cursor-pointer'>
-                <Link to="flightPlans" smooth={true} duration={900} >{t('footer.dashboard')</Link>
+                <Link to="flightPlans" smooth={true} duration={900} >{t('footer.dashboard')}</Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { TicketIcon } from "@heroicons/react/24/outline";
-import "cally";
 import { useTranslation } from "react-i18next";
 
 import { getAllAirports } from "./../services/api"
@@ -22,7 +21,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Datos del formulario:", { name, email });
+    console.log("Datos del formulario:", {  email });
   };
 
   return (
@@ -55,12 +54,12 @@ function Form() {
             <label htmlFor="name" className="block text-gray-700 font-semibold">
             {t('form.from')}:
             </label>
-            <select id="select" className="w-full px-4 py-2 border rounded-md">
+            <select id="select"  className="w-full px-4 py-2 border rounded-md">
               <option value="">{t('form.select')}</option>
               {
                 airPorts.map(item => (
                   <>
-                     <option id={item.id} value={item.name}>{item.name}</option>
+                     <option key={item.id} id={item.id} value={item.name}>{item.name}</option>
                   </>
                 ))
               }
