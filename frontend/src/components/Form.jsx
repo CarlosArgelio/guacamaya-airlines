@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TicketIcon } from "@heroicons/react/24/outline";
 import "cally";
 
+import { getAllAirports } from "./../services/api"
+
 function Form() {
+  const [airPorts, setAirPort] = useState(null)
   // const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    getAllAirports(setAirPort)
+  }, [])
+
+  if (!airPorts) return null;
+
+  console.log(airPorts)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,7 +55,13 @@ function Form() {
             </label>
             <select id="select" className="w-full px-4 py-2 border rounded-md">
               <option value="">Selecciona</option>
-              <option value="caracas">Caracas</option>
+              {
+                airPorts.map(item => (
+                  <>
+                     <option id={item.id} value={item.name}>{item.name}</option>
+                  </>
+                ))
+              }
             </select>
           </div>
           <div className="md:w-1/4 mb-4">
@@ -53,7 +70,13 @@ function Form() {
             </label>
             <select id="select" className="w-full px-4 py-2 border rounded-md">
               <option value="">Selecciona</option>
-              <option value="caracas">Caracas</option>
+              {
+                airPorts.map(item => (
+                  <>
+                     <option id={item.id} value={item.name}>{item.name}</option>
+                  </>
+                ))
+              }
             </select>
           </div>
           <div className="md:w-1/4 mb-4">
