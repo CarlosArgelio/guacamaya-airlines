@@ -1,4 +1,14 @@
 {
+  "footer": {
+    "aboutWe": "Sobre nosotros",
+    "description": "En Guacamaya Airlines, somos más que una simple aerolínea, somos un puente que te conecta con rincones más paradisíacos de Venezuela. Con una trayectoria impecable y un equipo apasionado por el vuelo, nos enorgullecemos de ofrecer una experiencia de viaje incomparable, donde la comodidad, la seguridad y la atención personalizada son nuestros pilares fundamentales.",
+    "sections": "Secciones",
+    "form": "Formulario de viaje",
+    "bestDestiny": "Mejores destinos",
+    "dashboard": "Panel de vuelo",
+    "developers": "Desarrolladores",
+    "copyright": "© 2024 Guacamaya Airlines. Todos los derechos reservados para la Hackaton 2024 de “Del Rincon del Dev”. | Política de privacidad 👀"
+  },
   "table": {
     "fligthPlans": "Planes de vuelo",
     "hours": "Hora de salida",

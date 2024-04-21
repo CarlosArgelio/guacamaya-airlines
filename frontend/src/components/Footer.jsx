@@ -1,42 +1,39 @@
+import { useTranslation } from "react-i18next";
 import { Linkedin } from "../assets";
 
 function Footer() {
+  // eslint-disable-next-line no-unused-vars
+  const [t, i18n] = useTranslation("global");
+
   return (
     <footer className="bg-gray-700 text-white py-4 ">
       <div className="container mx-auto px-8 ">
         <div className="flex flex-col lg:flex-row lg:flex-wrap">
           <div className="lg:w-1/3 mb-5 lg:mb-0">
-            <h3 className="text-xl font-bold mb-2">Sobre Nosotros</h3>
-            <p className="text-justify lg:mr-10">
-              En Guacamaya Airlines, somos más que una simple aerolínea, somos
-              un puente que te conecta con los rincones más paradisíacos de
-              Venezuela. Con una trayectoria impecable y un equipo apasionado
-              por el vuelo, nos enorgullecemos de ofrecer una experiencia de
-              viaje incomparable, donde la comodidad, la seguridad y la atención
-              personalizada son nuestros pilares fundamentales.
-            </p>
+            <h3 className="text-xl font-bold mb-2">{t('footer.aboutWe')}</h3>
+            <p className="text-justify lg:mr-10">{t('footer.description')}</p>
           </div>
 
           <div className="lg:w-1/3 mb-4 lg:mb-0">
-            <h3 className="text-xl font-bold mb-2">Secciones</h3>
+            <h3 className="text-xl font-bold mb-2">{t('footer.sections')}</h3>
             <ul>
               <li>
-                <a href="#">Formulario de viaje</a>
+                <a href="#">{t('footer.form')}</a>
               </li>
               <li>
-                <a href="#">Mejores destinos</a>
+                <a href="#">{t('footer.bestDestiny')}</a>
               </li>
               <li>
-                <a href="FAQS">Preguntas Frecuentes</a>
+                <a href="FAQS">{t('faq.frequentQuestions')}</a>
               </li>
               <li>
-                <a href="#">Panel de vuelos</a>
+                <a href="#">{t('footer.dashboard')}</a>
               </li>
             </ul>
           </div>
 
           <div className="lg:w-1/3">
-            <h3 className="text-xl font-bold mb-2">Desarrolladores</h3>
+            <h3 className="text-xl font-bold mb-2">{t('footer.developers')}</h3>
             
             {
               Developers.map(developer => (
@@ -60,8 +57,7 @@ function Footer() {
         <div className="flex justify-center lg:justify-end mt-6">
          
             <p>
-              © 2024 Guacamaya Airlines. Todos los derechos reservados para la
-              Hackaton 2024 de “Del Rincon del Dev”. | Política de privacidad 👀
+            {t('footer.copyright')}
             </p>
       
         </div>

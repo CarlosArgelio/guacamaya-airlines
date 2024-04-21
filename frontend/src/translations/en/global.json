@@ -1,4 +1,14 @@
 {
+  "footer": {
+    "aboutWe": "About Us",
+    "description": "At Guacamaya Airlines, we are more than just an airline, we are a bridge that connects you to the most paradisiacal corners of Venezuela. With an impeccable track record and a team passionate about flying, we are proud to offer an unparalleled travel experience, where comfort, safety and personalized attention are our fundamental pillars.",
+    "sections": "Sections",
+    "form": "Travel Form",
+    "bestDestiny": "Best Destinations",
+    "dashboard": "Flight Dashboard",
+    "developers": "Developers",
+    "copyright": "© 2024 Guacamaya Airlines. All rights reserved for the 2024 Hackathon of “Del Rincon del Dev”. | Privacy Policy 👀"
+  },
   "table": {
     "fligthPlans": "fligth Plans",
     "hours": "Departure Time",
