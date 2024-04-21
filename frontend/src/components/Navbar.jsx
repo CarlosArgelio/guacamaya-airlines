@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Logo } from "../assets/index";
-import { MoonIcon } from "@heroicons/react/24/solid";
 import { Bars4Icon } from "@heroicons/react/24/solid";
 import { Translation } from "./Translation";
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [t, i18n] = useTranslation("global");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,16 +22,16 @@ function Navbar() {
           </div>
           <div className="hidden md:flex items-center">
             <a href="#" className="text-black text-lg font-bold px-4  py-2">
-              Reserva
+              {t('navBar.reserver')}
             </a>
             <a href="#" className="text-black text-lg font-bold px-4  py-2">
-              Destinos
+              {t('navBar.destination')}
             </a>
             <a href="#" className="text-black text-lg font-bold px-4 py-2">
-              Preguntas
+              {t('navBar.questions')}
             </a>
             <a href="#" className="text-black text-lg font-bold px-4  py-2">
-              Sobre nosotros
+              {t('navBar.aboutWe')}
             </a>
           </div>
        

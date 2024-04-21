@@ -1,24 +1,22 @@
 import { MoonIcon } from "@heroicons/react/24/solid";
-// import { useState } from "react";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 
 export const Translation = () => {
-    // const { t, i18n: {changeLanguage, language} } = useTranslation();
-    // const [currentLanguage, setCurrentLanguage] = useState(language)
+    // eslint-disable-next-line no-unused-vars
+    const [t, i18n] = useTranslation("global");
 
-    // const handleChangeLanguage = () => {
-    //   const newLanguage = currentLanguage === "en" ? "pt" : "en";
-    //   setCurrentLanguage(newLanguage);
-    //   changeLanguage(newLanguage);
-    // }
+    const handleChangeLanguage = (event) => {
+        const newLang = event.target.value;
+        i18n.changeLanguage(newLang)
+      };
 
     return (
         <div className="flex items-center">
             <MoonIcon className="h-10 w-10 mx-4 hover:text-yellow-400 text-gray-700 md:block" />
-            <select id="select" className="bg-white border border-gray-300 py-2 px-2 rounded-md focus:outline-none focus:border-yellow-500">
-              <option value="">Español</option>
-              <option value="english">English</option>
+            <select id="select" className="bg-white border border-gray-300 py-2 px-2 rounded-md focus:outline-none focus:border-yellow-500" onChange={handleChangeLanguage}>
+              <option onSelect={() => i18n.changeLanguage("es")} value="es">es</option>
+              <option onSelect={() => i18n.changeLanguage("en")} value="en">en</option>    
             </select>
           </div>
     )
