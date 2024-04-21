@@ -1,4 +1,23 @@
 {
+  "ourPlaces": {
+    "weDestination": "Our Destinations",
+    "destination1": "Roraima",
+    "description1": "Embark on an adventure to Mount Roraima, the highest peak in Canaima National Park, a mystical place where you can admire majestic waterfalls, crystal-clear rivers, and unique rock formations.",
+    "destination2": "Mochima",
+    "description2": "Sail through Mochima National Park, an archipelago of 34 paradisiacal islands, where you can enjoy white sand beaches, turquoise waters, and a wide variety of water sports.",
+    "destination3": "Merida",
+    "description3": "Discover the City of the Knights, Merida, a colonial city surrounded by Andean mountains, where you can visit Pico Bolivar, the highest mountain in Venezuela, and enjoy charming towns and lush landscapes.",
+    "destination4": "Morrocoy",
+    "description4": "Relax in Morrocoy National Park, a natural paradise made up of 150 white sand cays and crystal-clear waters, where you can go snorkeling, diving, and enjoy the tranquility of the Caribbean Sea.",
+    "destination5": "Margarita",
+    "description5": "Enjoy Margarita Island, known as the Pearl of the Caribbean, a tourist destination par excellence, where you can find dream beaches, a vibrant nightlife, and a wide variety of activities for the whole family.",
+    "destination6": "Puerto la cruz",
+    "description6": "Visit Puerto La Cruz, a coastal city with a beautiful boardwalk, where you can enjoy delicious local cuisine, shop at artisan markets, and visit historical sites such as the San Felipe de la Barra Castle.",
+    "destination7": "Medanos de Coro",
+    "description7": "Venture into the Medanos de Coro, a white sand dune desert that stretches for over 15,000 hectares, where you can enjoy activities such as camel rides, sandboarding, and unforgettable sunsets.",
+    "destination8": "Los roque",
+    "description8": "Discover Los Roques, an archipelago of 49 coral islands, considered one of the most beautiful national parks in the world, where you can enjoy pristine beaches, crystal-clear waters, and a wide variety of marine life."
+  },
   "form": {
     "reserveYourFligt": "Book Your Flight",
     "oneWay": "One-Way",

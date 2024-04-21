@@ -1,4 +1,23 @@
 {
+  "ourPlaces": {
+    "weDestination": "Nuestros destinos",
+    "destination1": "Roraima",
+    "description1": "Aventúrate en el Tepuy Roraima, la cima más alta del Parque Nacional Canaima, un lugar místico donde podrás contemplar majestuosas cascadas, ríos de aguas cristalinas y formaciones rocosas únicas en el mundo.",
+    "destination2": "Mochima",
+    "description2": "Navega por el Parque Nacional Mochima, un archipiélago de 34 islas paradisíacas, donde podrás disfrutar de playas de arena blanca, aguas turquesas y una gran variedad de deportes acuáticos.",
+    "destination3": "Merida",
+    "description3": "Conoce la Ciudad de los Caballeros, Mérida, una ciudad colonial rodeada de montañas andinas, donde podrás visitar el Pico Bolívar, la montaña más alta de Venezuela, y disfrutar de encantadores pueblos y paisajes exuberantes.",
+    "destination4": "Morrocoy",
+    "description4": "Relájate en el Parque Nacional Morrocoy, un paraíso natural compuesto por 150 cayos de arena blanca y aguas cristalinas, donde podrás practicar snorkeling, buceo y disfrutar de la tranquilidad del mar caribeño.",
+    "destination5": "Margarita",
+    "description5": "Disfruta de la Isla de Margarita, conocida como la Perla del Caribe, un destino turístico por excelencia, donde podrás encontrar playas de ensueño, una vibrante vida nocturna y una gran variedad de actividades para toda la familia.",
+    "destination6": "Puerto la cruz",
+    "description6": "Visita Puerto La Cruz, una ciudad costera con un hermoso malecón, donde podrás disfrutar de una deliciosa gastronomía local, realizar compras en mercados artesanales y visitar lugares históricos como el Castillo de San Felipe de la Barra.",
+    "destination7": "Medanos de Coro",
+    "description7": "Adéntrate en los Médanos de Coro, un desierto de dunas de arena blanca que se extienden por más de 15.000 hectáreas, donde podrás realizar actividades como paseos en camello, sandboard y disfrutar de atardeceres inolvidables.",
+    "destination8": "Los roque",
+    "description8": "Descubre Los Roques, un archipiélago de 49 islas de origen coralino, considerado como uno de los parques nacionales más bellos del mundo, donde podrás disfrutar de playas vírgenes, aguas cristalinas y una gran variedad de vida marina."
+  },
   "form": {
     "reserveYourFligt": "Reserva tu vuelo",
     "oneWay": "Solo ida",
