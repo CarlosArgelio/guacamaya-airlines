@@ -1,8 +1,10 @@
+import { Link } from 'react-scroll';
 import { Linkedin } from "../assets";
+
 
 function Footer() {
   return (
-    <footer className="bg-gray-700 text-white py-4 ">
+    <footer id="footer" className="bg-gray-700 text-white py-4 ">
       <div className="container mx-auto px-8 ">
         <div className="flex flex-col lg:flex-row lg:flex-wrap">
           <div className="lg:w-1/3 mb-5 lg:mb-0">
@@ -20,17 +22,17 @@ function Footer() {
           <div className="lg:w-1/3 mb-4 lg:mb-0">
             <h3 className="text-xl font-bold mb-2">Secciones</h3>
             <ul>
-              <li>
-                <a href="#">Formulario de viaje</a>
+              <li className='hover:text-blue-400 cursor-pointer'>
+                <Link to="reservation" smooth={true} duration={900} >Formulario de reserva</Link>
               </li>
-              <li>
-                <a href="#">Mejores destinos</a>
+              <li className='hover:text-blue-400 cursor-pointer'>
+                <Link to="ourPlaces" smooth={true} duration={900} >Nuestros destinos</Link>
               </li>
-              <li>
-                <a href="FAQS">Preguntas Frecuentes</a>
-              </li>
-              <li>
-                <a href="#">Panel de vuelos</a>
+              <li className='hover:text-blue-400 cursor-pointer'>
+                <Link to="FAQs" smooth={true} duration={900} >Preguntas Frecuentes</Link>
+              </li> 
+              <li className='hover:text-blue-400 cursor-pointer'>
+                <Link to="flightPlans" smooth={true} duration={900} >Panel de vuelos</Link>
               </li>
             </ul>
           </div>

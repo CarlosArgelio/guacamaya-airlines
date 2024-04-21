@@ -2,7 +2,7 @@ import { CalendarIcon } from "@heroicons/react/24/outline";
 
 function Table() {
     return (
-      <div className="container max-w-6xl mx-auto py-8">
+      <div id="flightPlans" className="container max-w-6xl mx-auto py-8">
 
       <div className="flex items-center mb-8  ml-4 mb:mr-4">
         <h1 className="text-3xl font-semibold">Planes de vuelo</h1>

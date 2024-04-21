@@ -29,7 +29,7 @@ function Card({ imageSrc, title, description }) {
 
 function OurPlaces() {
   return (
-    <div className="container max-w-6xl mx-auto py-8  ">
+    <div id="ourPlaces" className="container max-w-6xl mx-auto py-8  ">
         <div className="flex">
 
       <h1 className="text-3xl font-semibold mb-8 ml-4">Nuestros destinos</h1>

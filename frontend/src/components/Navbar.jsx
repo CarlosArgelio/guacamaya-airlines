@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 import { Logo } from "../assets/index";
 import { MoonIcon } from "@heroicons/react/24/solid";
 import { Bars4Icon } from "@heroicons/react/24/solid";
@@ -12,25 +13,28 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-blue-400 p-2">
+    <nav className="bg-sky-500 p-2">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <img src={Logo} alt="" className="h-14" />
           </div>
           <div className="hidden md:flex items-center">
-            <a href="#" className="text-black text-lg font-bold px-4  py-2">
+            <Link to="reservation" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
               Reserva
-            </a>
-            <a href="#" className="text-black text-lg font-bold px-4  py-2">
+            </Link>
+            <Link to="ourPlaces" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
               Destinos
-            </a>
-            <a href="#" className="text-black text-lg font-bold px-4 py-2">
+            </Link>
+            <Link to="FAQs" smooth={true} duration={900} className="text-white text-lg font-bold px-4 py-2 hover:text-blue-900 cursor-pointer">
               Preguntas
-            </a>
-            <a href="#" className="text-black text-lg font-bold px-4  py-2">
+            </Link>
+            <Link to="flightPlans" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
+            Panel de vuelo
+            </Link>
+            <Link to="footer" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
               Sobre nosotros
-            </a>
+            </Link>
           </div>
        
 
@@ -53,10 +57,11 @@ function Navbar() {
         </div>
         {isOpen && (
           <div className="md:hidden mt-2 ">
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Reserva</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Destinos</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Preguntas</a>
-            <a href="#" className="block text-center py-2 px-4 text-black font-bold">Sobre nosotros</a>
+            <Link to="reservation" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Reserva</Link>
+            <Link to="ourPlaces" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Destinos</Link>
+            <Link to="FAQs" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Preguntas</Link>
+            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Planes de vuelo</Link>
+            <Link to="footer" smooth={true} duration={900} className="block text-center py-2 px-4 text-black font-bold hover:bg-blue-500">Sobre nosotros</Link>
           </div>
         )}
       </div>
