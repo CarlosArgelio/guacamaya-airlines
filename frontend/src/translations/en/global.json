@@ -1,4 +1,12 @@
 {
+  "table": {
+    "fligthPlans": "fligth Plans",
+    "hours": "Departure Time",
+    "destination": "Destination",
+    "code": "Flight Code",
+    "door": "Gate",
+    "status": "Status"
+  },
   "faq": {
     "frequentQuestions": "Frequently Asked Questions",
     "faq1": {

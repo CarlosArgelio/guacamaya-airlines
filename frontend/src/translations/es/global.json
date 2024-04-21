@@ -1,4 +1,12 @@
 {
+  "table": {
+    "fligthPlans": "Planes de vuelo",
+    "hours": "Hora de salida",
+    "destination": "Destino",
+    "code": "Codigo de vuelo",
+    "door": "Puerta",
+    "status": "Status"
+  },
   "faq": {
     "frequentQuestions": "Preguntas frecuentes",
     "faq1": {

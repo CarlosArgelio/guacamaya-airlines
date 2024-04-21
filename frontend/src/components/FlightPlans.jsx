@@ -1,22 +1,26 @@
 import { CalendarIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
 
 function Table() {
+      // eslint-disable-next-line no-unused-vars
+      const [t, i18n] = useTranslation("global");
+
     return (
       <div className="container max-w-6xl mx-auto py-8 ">
         <div className="flex">
 
-          <h1 className="text-3xl font-semibold mb-8">Planes de vuelo</h1>
+          <h1 className="text-3xl font-semibold mb-8">{t('table.fligthPlans')}</h1>
 
           <CalendarIcon className="w-10 h-10 "></CalendarIcon>
         </div>
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-900 text-yellow-300">
-              <th className="px-4 py-2 text-left">Hora de Salida</th>
-              <th className="px-4 py-2 text-left">Destino</th>
-              <th className="px-4 py-2 text-left">Código de vuelo</th>
-              <th className="px-4 py-2 text-left">Puerta</th>
-              <th className="px-4 py-2 text-left">Status</th>
+              <th className="px-4 py-2 text-left">{t('table.hours')}</th>
+              <th className="px-4 py-2 text-left">{t('table.destination')}</th>
+              <th className="px-4 py-2 text-left">{t('table.code')}</th>
+              <th className="px-4 py-2 text-left">{t('table.door')}</th>
+              <th className="px-4 py-2 text-left">{t('table.status')}</th>
             </tr>
           </thead>
           <tbody>
