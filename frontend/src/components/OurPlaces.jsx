@@ -29,13 +29,13 @@ function Card({ imageSrc, title, description }) {
 
 function OurPlaces() {
   return (
-    <div className="container max-w-6xl mx-auto py-8">
+    <div className="container max-w-6xl mx-auto py-8  ">
         <div className="flex">
 
-      <h1 className="text-3xl font-semibold mb-8">Nuestros destinos</h1>
+      <h1 className="text-3xl font-semibold mb-8 ml-4">Nuestros destinos</h1>
       <GlobeAmericasIcon className="w-10 h-10"></GlobeAmericasIcon>
         </div>
-      <div className="flex flex-wrap -mx-4 justify-center">
+      <div className="flex flex-wrap mx-4 justify-center">
         {cards.map((card, index) => (
           <Card
             key={index}

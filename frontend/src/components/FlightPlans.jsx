@@ -2,14 +2,14 @@ import { CalendarIcon } from "@heroicons/react/24/outline";
 
 function Table() {
     return (
-      <div className="container max-w-6xl mx-auto py-8 ">
-        <div className="flex">
+      <div className="container max-w-6xl mx-auto py-8">
 
-          <h1 className="text-3xl font-semibold mb-8">Planes de vuelo</h1>
-
-          <CalendarIcon className="w-10 h-10 "></CalendarIcon>
-        </div>
-        <table className="table-auto w-full border-collapse border border-gray-300">
+      <div className="flex items-center mb-8  ml-4 mb:mr-4">
+        <h1 className="text-3xl font-semibold">Planes de vuelo</h1>
+        <CalendarIcon className="w-10 h-10" />
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full table-auto border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-900 text-yellow-300">
               <th className="px-4 py-2 text-left">Hora de Salida</th>
@@ -20,9 +20,7 @@ function Table() {
             </tr>
           </thead>
           <tbody>
-            {
-              FlightPlans.map(flightPlan => (
-
+            {FlightPlans.map((flightPlan) => (
               <tr key={flightPlan.id} className="bg-gray-900 text-yellow-300">
                 <td className="border px-4 py-2">{flightPlan.leave}</td>
                 <td className="border px-4 py-2">{flightPlan.destination}</td>
@@ -30,12 +28,11 @@ function Table() {
                 <td className="border px-4 py-2">{flightPlan.door}</td>
                 <td className="border px-4 py-2">{flightPlan.status}</td>
               </tr>
-              ))
-            }
-           
+            ))}
           </tbody>
         </table>
       </div>
+    </div>
     );
   }
 
