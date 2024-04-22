@@ -1,0 +1,83 @@
+{
+  "ourPlaces": {
+    "weDestination": "Nuestros destinos",
+    "destination1": "Roraima",
+    "description1": "Aventúrate en el Tepuy Roraima, la cima más alta del Parque Nacional Canaima, un lugar místico donde podrás contemplar majestuosas cascadas, ríos de aguas cristalinas y formaciones rocosas únicas en el mundo.",
+    "destination2": "Mochima",
+    "description2": "Navega por el Parque Nacional Mochima, un archipiélago de 34 islas paradisíacas, donde podrás disfrutar de playas de arena blanca, aguas turquesas y una gran variedad de deportes acuáticos.",
+    "destination3": "Merida",
+    "description3": "Conoce la Ciudad de los Caballeros, Mérida, una ciudad colonial rodeada de montañas andinas, donde podrás visitar el Pico Bolívar, la montaña más alta de Venezuela, y disfrutar de encantadores pueblos y paisajes exuberantes.",
+    "destination4": "Morrocoy",
+    "description4": "Relájate en el Parque Nacional Morrocoy, un paraíso natural compuesto por 150 cayos de arena blanca y aguas cristalinas, donde podrás practicar snorkeling, buceo y disfrutar de la tranquilidad del mar caribeño.",
+    "destination5": "Margarita",
+    "description5": "Disfruta de la Isla de Margarita, conocida como la Perla del Caribe, un destino turístico por excelencia, donde podrás encontrar playas de ensueño, una vibrante vida nocturna y una gran variedad de actividades para toda la familia.",
+    "destination6": "Puerto la cruz",
+    "description6": "Visita Puerto La Cruz, una ciudad costera con un hermoso malecón, donde podrás disfrutar de una deliciosa gastronomía local, realizar compras en mercados artesanales y visitar lugares históricos como el Castillo de San Felipe de la Barra.",
+    "destination7": "Medanos de Coro",
+    "description7": "Adéntrate en los Médanos de Coro, un desierto de dunas de arena blanca que se extienden por más de 15.000 hectáreas, donde podrás realizar actividades como paseos en camello, sandboard y disfrutar de atardeceres inolvidables.",
+    "destination8": "Los roque",
+    "description8": "Descubre Los Roques, un archipiélago de 49 islas de origen coralino, considerado como uno de los parques nacionales más bellos del mundo, donde podrás disfrutar de playas vírgenes, aguas cristalinas y una gran variedad de vida marina."
+  },
+  "form": {
+    "reserveYourFligt": "Reserva tu vuelo",
+    "oneWay": "Solo ida",
+    "roudTrip": "Ida y vuelta",
+    "select": "Selecciona",
+    "from": "Desde",
+    "to": "Hasta",
+    "calendar": "Calendario",
+    "howManyTravel": "Cuantos viajan",
+    "email": "Correo Electronico",
+    "CTAButtom": "Reservar"
+  },
+  "footer": {
+    "aboutWe": "Sobre nosotros",
+    "description": "En Guacamaya Airlines, somos más que una simple aerolínea, somos un puente que te conecta con rincones más paradisíacos de Venezuela. Con una trayectoria impecable y un equipo apasionado por el vuelo, nos enorgullecemos de ofrecer una experiencia de viaje incomparable, donde la comodidad, la seguridad y la atención personalizada son nuestros pilares fundamentales.",
+    "sections": "Secciones",
+    "form": "Formulario de viaje",
+    "bestDestiny": "Mejores destinos",
+    "dashboard": "Panel de vuelo",
+    "developers": "Desarrolladores",
+    "copyright": "© 2024 Guacamaya Airlines. Todos los derechos reservados para la Hackaton 2024 de “Del Rincon del Dev”. | Política de privacidad 👀"
+  },
+  "table": {
+    "fligthPlans": "Planes de vuelo",
+    "hours": "Hora de salida",
+    "destination": "Destino",
+    "code": "Codigo de vuelo",
+    "door": "Puerta",
+    "status": "Status"
+  },
+  "faq": {
+    "frequentQuestions": "Preguntas frecuentes",
+    "faq1": {
+      "q": "¿Cuál es el equipaje permitido?",
+      "a": "Cada pasajero puede llevar una maleta de mano y una maleta facturada. Consulta nuestras políticas para obtener más detalles sobre el tamaño y el peso permitido."
+    },
+    "faq2": {
+      "q": "¿Cómo puedo realizar el check-in?",
+      "a": "Puedes realizar el check-in en línea a través de nuestra página web o aplicación móvil, o también en el mostrador de check-in del aeropuerto."
+    },
+    "faq3": {
+      "q": "¿Qué debo hacer si pierdo mi vuelo?",
+      "a": "Si pierdes tu vuelo, por favor contacta a nuestro personal en el aeropuerto para obtener asistencia. Dependiendo de la situación, es posible que podamos reprogramar tu vuelo sin cargo adicional."
+    },
+    "faq4": {
+      "q": "¿Puedo cambiar mi reserva?",
+      "a": "Sí, puedes cambiar tu reserva sujeto a disponibilidad y tarifas adicionales. Te recomendamos que consultes nuestras políticas de cambio antes de realizar cualquier modificación."
+    },
+    "faq5": {
+      "q": "¿Qué debo hacer si tengo una pregunta adicional?",
+      "a": "Si tienes alguna pregunta adicional, no dudes en contactar a nuestro equipo de atención al cliente. Estamos aquí para ayudarte en todo lo que necesites."
+    }
+  },
+  "banner": {
+    "text": "Te enviamos al paraíso"
+  },
+  "navBar": {
+    "reserver": "Reservar",
+    "destination": "Destino",
+    "questions": "Preguntas",
+    "aboutWe": "Sobre nosotros"
+  }
+}

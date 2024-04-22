@@ -7,55 +7,55 @@ import { findId, createAirPort, updateAirPort } from './../schemas'
 
 export const airpot = Router()
 
-const findAll = (req: Request, res: Response, next: NextFunction) => {
+const findAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const controller = new CRUDController(new AirPortService())
-    const airports = controller.findAll()
+    const airports = await controller.findAll()
     success(req, res, airports)
   } catch (error) {
     next(error)
   }
 }
-const findOne = (req: Request, res: Response, next: NextFunction) => {
+const findOne = async (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.params
 
   try {
     const controller = new CRUDController(new AirPortService())
-    const airport = controller.findOne(id)
+    const airport = await controller.findOne(id)
     success(req, res, airport)
   } catch (error) {
     next(error)
   }
 }
-const create = (req: Request, res: Response, next: NextFunction) => {
+const create = async (req: Request, res: Response, next: NextFunction) => {
   const data = req.body
 
   try {
     const controller = new CRUDController(new AirPortService())
-    const newAirPort = controller.create(data)
+    const newAirPort = await controller.create(data)
     success(req, res, newAirPort, 201)
   } catch (error) {
     next(error)
   }
 }
-const update = (req: Request, res: Response, next: NextFunction) => {
+const update = async (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.params
   const changes = req.body
 
   try {
     const controller = new CRUDController(new AirPortService())
-    const updateAirport = controller.update(id, changes)
+    const updateAirport = await controller.update(id, changes)
     success(req, res, updateAirport)
   } catch (error) {
     next(error)
   }
 }
-const remove = (req: Request, res: Response, next: NextFunction) => {
+const remove = async (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.params
 
   try {
     const controller = new CRUDController(new AirPortService())
-    controller.remove(id)
+    await controller.remove(id)
     res.status(204).json()
   } catch (error) {
     next(error)

@@ -1,17 +1,17 @@
 import boom from '@hapi/boom'
-import { AirPortService, DestinationService } from '../services'
+import { AirPortService } from '../services'
 
 /**
  * The Controller` class is responsible for handling requests related to airports.
  * It interacts with the `AirPortService` class to perform CRUD operations on data.
  */
 export class CRUDController {
-  public readonly services: AirPortService | DestinationService
+  public readonly services: AirPortService
   /**
    * Creates an instance of `AirPortController`.
    * @param airportService An instance of the `AirPortService` class used to interact with the data in the database.
    */
-  constructor(services: AirPortService | DestinationService) {
+  constructor(services: AirPortService) {
     this.services = services
   }
 
@@ -29,8 +29,8 @@ export class CRUDController {
    * @returns The object with the specified ID from the database.
    * @throws Error if the is not found.
    */
-  findOne(id: string) {
-    const data = this.services.findOne(id)
+  async findOne(id: string) {
+    const data = await this.services.findOne(id)
     if (!data) {
       throw boom.notFound('id not found')
     }
@@ -42,8 +42,8 @@ export class CRUDController {
    * @param data The data of the new object.
    * @returns The added object.
    */
-  create(data: any) {
-    return this.services.create(data)
+  async create(data: any) {
+    return await this.services.create(data)
   }
 
   /**
@@ -53,9 +53,9 @@ export class CRUDController {
    * @returns The updated object.
    * @throws Error if the is not found.
    */
-  update(id: string, changes: any) {
-    this.findOne(id)
-    return this.services.update(id, changes)
+  async update(id: string, changes: any) {
+    await this.findOne(id)
+    return await this.services.update(id, changes)
   }
 
   /**
@@ -64,8 +64,8 @@ export class CRUDController {
    * @returns True if the is successfully removed, or null if the is not found.
    * @throws Error if the is not found.
    */
-  remove(id: string) {
-    this.findOne(id)
-    return this.services.remove(id)
+  async remove(id: string) {
+    await this.findOne(id)
+    return await this.services.remove(id)
   }
 }

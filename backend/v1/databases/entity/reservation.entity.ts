@@ -1,9 +1,27 @@
-import { Entity, Column } from 'typeorm'
-
-import { BaseEntity } from './base'
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
+  Timestamp,
+} from 'typeorm'
 
 @Entity()
-export class Reservations extends BaseEntity {
+export class Reservations {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string
+
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt!: Date
+
+  @UpdateDateColumn({ name: 'updated_at' })
+  updatedAt!: Date
+
+  @DeleteDateColumn({ name: 'deleted_at' })
+  deletedAt!: Date
+
   @Column({ type: 'varchar', length: 100 })
   email!: string
 
@@ -19,15 +37,29 @@ export class Reservations extends BaseEntity {
   @Column({ type: 'varchar', length: 100 })
   to!: string
 
-  @Column()
-  dateStart!: Date
+  @Column({
+    type: 'timestamp',
+  })
+  dateStart!: string
 
-  @Column()
-  dateEnd!: Date
+  @Column({
+    type: 'timestamp',
+  })
+  dateEnd!: string
 
-  @Column()
+  @Column({
+    type: 'int',
+  })
   adults!: number
 
-  @Column()
+  @Column({
+    type: 'int',
+  })
   children!: number
+
+  @Column({
+    type: 'boolean',
+    default: false,
+  })
+  status!: boolean
 }
