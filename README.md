@@ -12,3 +12,4 @@ npx husky init
 # Add commit message linting to commit-msg hook
 echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 ```
+test
