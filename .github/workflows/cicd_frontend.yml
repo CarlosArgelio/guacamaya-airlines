@@ -19,6 +19,7 @@ jobs:
       - name: Instalar dependencias
         run: |
           cd frontend
+          npm install -g vite
           npm install
 
       - name: Generar build
