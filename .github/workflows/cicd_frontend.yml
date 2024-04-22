@@ -20,13 +20,17 @@ jobs:
         run: |
           cd frontend
           npm install
+
+      - name: Generar build
+        run: |
+          cd frontend
           npm run build
 
       - name: artifacts
         uses: actions/upload-artifact@v2
         with: 
           name: "upload artifacts"
-          path: dist/
+          path: frontend/dist/
 
       - name: Download File from S3
         uses: docker://amazon/aws-cli:2.0.7
@@ -35,4 +39,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
         with:
-          args: s3 cp ./dist/ s3://www.guacamaya-airline.com/ --recursive
+          args: s3 cp frontend/dist/ s3://www.guacamaya-airline.com/ --recursive
