@@ -20,9 +20,6 @@ jobs:
         run: |
           cd frontend
           npm install
-
-      - name: Generar build
-        run: |
           npm run build
 
       - name: artifacts
