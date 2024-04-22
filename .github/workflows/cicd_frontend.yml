@@ -23,7 +23,7 @@ jobs:
 
       - name: Generar build
         run: |
-          npm run build
+          npm run vite build
 
       - name: artifacts
         uses: actions/upload-artifact@v2
