@@ -8,6 +8,11 @@ export class ReservationService {
     private readonly reservation = AppDataSource.getRepository(Reservations),
   ) {}
 
+  async getByEmail(email: string) {
+    const getData = await this.reservation.findBy({ email })
+    return getData
+  }
+
   async getAllReservations() {
     return await this.reservation.find()
   }

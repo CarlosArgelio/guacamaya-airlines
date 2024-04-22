@@ -55,102 +55,112 @@ export class ReservationController {
       throw new Error('From and to cannot be the same')
     }
 
-    // const newReservation = {
-    //   ...data,
-    //   dateStart: new Date(data.dateStart * 1000).toISOString(),
-    //   dateEnd: new Date(data.dateEnd * 1000).toISOString(),
-    // }
+    const validateEmail = await this.reservationService.getByEmail(email)
 
-    // const reservation =
-    //   await this.reservationService.createReservation(newReservation)
-    // await this.emailService.sendEmail(
-    //   email,
-    //   'Guacamaya Airlines - Felicidades haz reservado exitosamente un vuelo',
-    //   `
-    //   <!doctype html>
-    //   <html lang="es">
-    //     <head>
-    //       <meta charset="UTF-8" />
-    //       <title>Confirmación de Reserva</title>
-    //       <style>
-    //         body {
-    //           font-family: sans-serif;
-    //           margin: 0;
-    //           padding: 0;
-    //         }
+    if (validateEmail.length > 0) {
+      const filterEmailsAviable = validateEmail.filter(
+        (reservation) => reservation.status !== 'RECHAZED',
+      )
+      if (filterEmailsAviable.length > 0) {
+        throw new Error('Email already exists')
+      }
+    }
 
-    //         .container {
-    //           width: 600px;
-    //           margin: 0 auto;
-    //           padding: 20px;
-    //           border: 1px solid #ccc;
-    //         }
+    const newReservation = {
+      ...data,
+      status: 'WAIT',
+    }
 
-    //         h1 {
-    //           text-align: center;
-    //           margin-bottom: 20px;
-    //         }
+    const reservation =
+      await this.reservationService.createReservation(newReservation)
+    await this.emailService.sendEmail(
+      email,
+      'Guacamaya Airlines - Felicidades haz reservado exitosamente un vuelo',
+      `
+      <!doctype html>
+      <html lang="es">
+        <head>
+          <meta charset="UTF-8" />
+          <title>Confirmación de Reserva</title>
+          <style>
+            body {
+              font-family: sans-serif;
+              margin: 0;
+              padding: 0;
+            }
 
-    //         p {
-    //           margin-bottom: 10px;
-    //         }
+            .container {
+              width: 600px;
+              margin: 0 auto;
+              padding: 20px;
+              border: 1px solid #ccc;
+            }
 
-    //         .button {
-    //           background-color: #007bff;
-    //           color: white;
-    //           padding: 10px 20px;
-    //           border: none;
-    //           cursor: pointer;
-    //           text-decoration: none;
-    //         }
+            h1 {
+              text-align: center;
+              margin-bottom: 20px;
+            }
 
-    //         .button:hover {
-    //           background-color: #0056b3;
-    //         }
-    //       </style>
-    //     </head>
-    //     <body>
-    //       <div class="container">
-    //         <h1>¡Gracias por su reserva!</h1>
+            p {
+              margin-bottom: 10px;
+            }
 
-    //         <p>Estimado(a) [Nombre del cliente],</p>
+            .button {
+              background-color: #007bff;
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              text-decoration: none;
+            }
 
-    //         <p>
-    //           Le confirmamos su reserva para [Nombre del servicio] el [Fecha de la
-    //           reserva] a las [Hora de la reserva].
-    //         </p>
+            .button:hover {
+              background-color: #0056b3;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>¡Gracias por su reserva!</h1>
 
-    //         <p>Detalles de la reserva:</p>
-    //         <ul>
-    //           <li>Nombre del cliente: [Nombre del cliente]</li>
-    //           <li>Servicio reservado: [Nombre del servicio]</li>
-    //           <li>Fecha de la reserva: [Fecha de la reserva]</li>
-    //           <li>Hora de la reserva: [Hora de la reserva]</li>
-    //         </ul>
+            <p>Estimado(a) [Nombre del cliente],</p>
 
-    //         <p>
-    //           Para confirmar su reserva, por favor haga clic en el siguiente botón:
-    //         </p>
+            <p>
+              Le confirmamos su reserva para [Nombre del servicio] el [Fecha de la
+              reserva] a las [Hora de la reserva].
+            </p>
 
-    //         <a href="[Enlace para confirmar la reserva]" class="button"
-    //           >Confirmar reserva</a
-    //         >
+            <p>Detalles de la reserva:</p>
+            <ul>
+              <li>Nombre del cliente: [Nombre del cliente]</li>
+              <li>Servicio reservado: [Nombre del servicio]</li>
+              <li>Fecha de la reserva: [Fecha de la reserva]</li>
+              <li>Hora de la reserva: [Hora de la reserva]</li>
+            </ul>
 
-    //         <p>
-    //           Si no confirma su reserva en 24 horas, se cancelará automáticamente.
-    //         </p>
+            <p>
+              Para confirmar su reserva, por favor haga clic en el siguiente botón:
+            </p>
 
-    //         <p>Agradecemos su preferencia.</p>
+            <a href="[Enlace para confirmar la reserva]" class="button"
+              >Confirmar reserva</a
+            >
 
-    //         <p>Atentamente,</p>
-    //         <p>[Nombre de la empresa]</p>
-    //       </div>
-    //     </body>
-    //   </html>
+            <p>
+              Si no confirma su reserva en 24 horas, se cancelará automáticamente.
+            </p>
 
-    //   `,
-    // )
-    // return reservation
+            <p>Agradecemos su preferencia.</p>
+
+            <p>Atentamente,</p>
+            <p>[Nombre de la empresa]</p>
+          </div>
+        </body>
+      </html>
+
+      `,
+    )
+    return reservation
   }
 
   async update(id: string, changes: any) {
