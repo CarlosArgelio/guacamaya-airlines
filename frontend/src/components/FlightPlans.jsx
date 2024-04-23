@@ -19,7 +19,7 @@ function Table() {
     <div id="flightPlans" className="container max-w-6xl mx-auto py-8 ">
       <div className="flex">
         <h1 className="text-3xl font-semibold mb-8 ml-4 mb:mr-4">
-          {t("table.fligthPlans")}
+          {t("table.flightPlans")}
         </h1>
 
 

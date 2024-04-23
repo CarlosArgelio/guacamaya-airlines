@@ -19,7 +19,7 @@
     "description8": "Discover Los Roques, an archipelago of 49 coral islands, considered one of the most beautiful national parks in the world, where you can enjoy pristine beaches, crystal-clear waters, and a wide variety of marine life."
   },
   "form": {
-    "reserveYourFligt": "Book Your Flight",
+    "reserveYourFlight": "Book Your Flight",
     "oneWay": "One-Way",
     "roudTrip": "Round Trip",
     "select": "Select",
@@ -41,7 +41,7 @@
     "copyright": "© 2024 Guacamaya Airlines. All rights reserved for the 2024 Hackathon of “Del Rincon del Dev”. | Privacy Policy 👀"
   },
   "table": {
-    "fligthPlans": "fligth Plans",
+    "flightPlans": "Flight pane",
     "hours": "Departure Time",
     "destination": "Destination",
     "code": "Flight Code",
@@ -72,11 +72,17 @@
     }
   },
   "banner": {
-    "text": "We send you to paradise"
+    "text1": "We invite you to discover the magic of Venezuela.",
+    "text2": "Book your next flight today and live an unforgettable experience..."
+  },
+  "select": {
+    "spanish": "Spanish",
+    "english": "English"
   },
   "navBar": {
     "reserver": "Reserver",
     "destination": "Destiny",
+    "flightPanel": "Flight panel",
     "questions": "Questions",
     "aboutWe": "About We"
   }

@@ -27,7 +27,7 @@ function Form() {
   return (
     <div id="reservation" className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl ">
     <div className="flex rounded-t-xl pt-2 justify-center bg-green-400 drop-shadow-lg">
-      <h1 className="text-3xl font-bold mb-4">{t('form.reserveYourFligt')}</h1>
+      <h1 className="text-3xl font-bold mb-4">{t('form.reserveYourFlight')}</h1>
       <TicketIcon className="w-10 h-10" />
     </div>
     <div className="max-w-6xl p-4 bg-gray-100 rounded-b-xl">

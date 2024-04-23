@@ -34,7 +34,7 @@ function Navbar() {
                {t('navBar.questions')}
             </Link>
             <Link to="flightPlans" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
-            Panel de vuelo
+            {t('navBar.flightPanel')}
             </Link>
             <Link to="footer" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
              {t('navBar.aboutWe')}
@@ -60,7 +60,7 @@ function Navbar() {
             <Link to="reservation" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.reserver')}</Link>
             <Link to="ourPlaces" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.destination')}</Link>
             <Link to="FAQs" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.questions')}</Link>
-            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">Planes de vuelo</Link>
+            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer"> {t('navBar.flightPanel')}</Link>
             <Link to="footer" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.aboutWe')}</Link>
 
           </div>
