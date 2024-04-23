@@ -19,7 +19,7 @@
     "description8": "Descubre Los Roques, un archipiélago de 49 islas de origen coralino, considerado como uno de los parques nacionales más bellos del mundo, donde podrás disfrutar de playas vírgenes, aguas cristalinas y una gran variedad de vida marina."
   },
   "form": {
-    "reserveYourFligt": "Reserva tu vuelo",
+    "reserveYourFlight": "Reserva tu vuelo",
     "oneWay": "Solo ida",
     "roudTrip": "Ida y vuelta",
     "select": "Selecciona",
@@ -41,7 +41,7 @@
     "copyright": "© 2024 Guacamaya Airlines. Todos los derechos reservados para la Hackaton 2024 de “Del Rincon del Dev”. | Política de privacidad 👀"
   },
   "table": {
-    "fligthPlans": "Planes de vuelo",
+    "flightPlans": "Planes de vuelo",
     "hours": "Hora de salida",
     "destination": "Destino",
     "code": "Codigo de vuelo",
@@ -72,11 +72,17 @@
     }
   },
   "banner": {
-    "text": "Te enviamos al paraíso"
+    "text1": "Te invitamos a descubrir la magia de Venezuela",
+    "text2": "Reserva tu próximo vuelo hoy mismo y vive una experiencia inolvidable..."
+  },
+  "select": {
+    "spanish": "Español",
+    "english": "Ingles"
   },
   "navBar": {
     "reserver": "Reservar",
     "destination": "Destino",
+    "flightPanel": "Panel de vuelos",
     "questions": "Preguntas",
     "aboutWe": "Sobre nosotros"
   }
