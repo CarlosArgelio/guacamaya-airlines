@@ -58,8 +58,7 @@ export class Reservations {
   children!: number
 
   @Column({
-    type: 'boolean',
-    default: false,
+    type: 'varchar',
   })
-  status!: boolean
+  status!: string
 }
