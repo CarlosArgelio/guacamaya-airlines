@@ -1,5 +1,3 @@
-import { uuid } from 'uuidv4'
-import { faker } from '@faker-js/faker'
 import { AppDataSource, Airports } from '../databases'
 
 export class AirPortService {
