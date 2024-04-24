@@ -15,8 +15,8 @@ export const createReservation = Joi.object({
   roundTrip: roundTrip.required(),
   from: from,
   to: to,
-  dateStart: Joi.date().less(Joi.ref('dateEnd')).required(),
-  dateEnd: Joi.date().required(),
+  dateStart: Joi.date().required(),
+  dateEnd: Joi.date().optional(),
   adults: adults.required(),
   children: children.required(),
 })
