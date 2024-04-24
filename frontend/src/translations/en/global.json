@@ -25,10 +25,12 @@
     "select": "Select",
     "from": "From",
     "to": "To",
-    "calendar": "Calendar",
-    "howManyTravel": "How Many Travelers",
+    "dateStart": "Departure date",
+    "dateEnd": "Return date",
+    "howManyAdultTravel": "How many adults travel",
+    "howManyChildrenTravel": "How many children travel",
     "email": "Email Address",
-    "CTAButtom": "Book Now"
+    "CTAButtom": "Reserver"
   },
   "footer": {
     "aboutWe": "About Us",
