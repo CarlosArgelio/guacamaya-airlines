@@ -1,0 +1,91 @@
+{
+  "ourPlaces": {
+    "weDestination": "Our Destinations",
+    "destination1": "Roraima",
+    "description1": "Embark on an adventure to Mount Roraima, the highest peak in Canaima National Park, a mystical place where you can admire majestic waterfalls, crystal-clear rivers, and unique rock formations.",
+    "destination2": "Mochima",
+    "description2": "Sail through Mochima National Park, an archipelago of 34 paradisiacal islands, where you can enjoy white sand beaches, turquoise waters, and a wide variety of water sports.",
+    "destination3": "Merida",
+    "description3": "Discover the City of the Knights, Merida, a colonial city surrounded by Andean mountains, where you can visit Pico Bolivar, the highest mountain in Venezuela, and enjoy charming towns and lush landscapes.",
+    "destination4": "Morrocoy",
+    "description4": "Relax in Morrocoy National Park, a natural paradise made up of 150 white sand cays and crystal-clear waters, where you can go snorkeling, diving, and enjoy the tranquility of the Caribbean Sea.",
+    "destination5": "Margarita",
+    "description5": "Enjoy Margarita Island, known as the Pearl of the Caribbean, a tourist destination par excellence, where you can find dream beaches, a vibrant nightlife, and a wide variety of activities for the whole family.",
+    "destination6": "Puerto la cruz",
+    "description6": "Visit Puerto La Cruz, a coastal city with a beautiful boardwalk, where you can enjoy delicious local cuisine, shop at artisan markets, and visit historical sites such as the San Felipe de la Barra Castle.",
+    "destination7": "Medanos de Coro",
+    "description7": "Venture into the Medanos de Coro, a white sand dune desert that stretches for over 15,000 hectares, where you can enjoy activities such as camel rides, sandboarding, and unforgettable sunsets.",
+    "destination8": "Los roque",
+    "description8": "Discover Los Roques, an archipelago of 49 coral islands, considered one of the most beautiful national parks in the world, where you can enjoy pristine beaches, crystal-clear waters, and a wide variety of marine life."
+  },
+  "form": {
+    "reserveYourFlight": "Book Your Flight",
+    "oneWay": "One-Way",
+    "roudTrip": "Round Trip",
+    "select": "Select",
+    "from": "From",
+    "to": "To",
+    "dateStart": "Departure date",
+    "dateEnd": "Return date",
+    "howManyAdultTravel": "How many adults travel",
+    "howManyChildrenTravel": "How many children travel",
+    "email": "Email Address",
+    "CTAButtom": "Reserver"
+  },
+  "footer": {
+    "aboutWe": "About Us",
+    "description": "At Guacamaya Airlines, we are more than just an airline, we are a bridge that connects you to the most paradisiacal corners of Venezuela. With an impeccable track record and a team passionate about flying, we are proud to offer an unparalleled travel experience, where comfort, safety and personalized attention are our fundamental pillars.",
+    "sections": "Sections",
+    "form": "Travel Form",
+    "bestDestiny": "Best Destinations",
+    "dashboard": "Flight Dashboard",
+    "developers": "Developers",
+    "copyright": "© 2024 Guacamaya Airlines. All rights reserved for the 2024 Hackathon of “Del Rincon del Dev”. | Privacy Policy 👀"
+  },
+  "table": {
+    "flightPlans": "Flight pane",
+    "hours": "Departure Time",
+    "destination": "Destination",
+    "code": "Flight Code",
+    "door": "Gate",
+    "status": "Status"
+  },
+  "faq": {
+    "frequentQuestions": "Frequently Asked Questions",
+    "faq1": {
+      "q": "What is the allowed baggage?",
+      "a": "Each passenger is allowed one carry-on bag and one checked bag. Please refer to our policies for more details on size and weight restrictions."
+    },
+    "faq2": {
+      "q": "How can I check in?",
+      "a": "You can check in online through our website or mobile app, or at the airport check-in counter."
+    },
+    "faq3": {
+      "q": "What should I do if I miss my flight?",
+      "a": "If you miss your flight, please contact our staff at the airport for assistance. Depending on the situation, we may be able to reschedule your flight without additional charges."
+    },
+    "faq4": {
+      "q": "Can I change my reservation?",
+      "a": "Yes, you can change your reservation subject to availability and additional fees. We recommend that you review our change policies before making any modifications."
+    },
+    "faq5": {
+      "q": "What should I do if I have an additional question?",
+      "a": "If you have any additional questions, please do not hesitate to contact our customer service team. We are here to assist you with anything you need."
+    }
+  },
+  "banner": {
+    "text1": "We invite you to discover the magic of Venezuela.",
+    "text2": "Book your next flight today and live an unforgettable experience..."
+  },
+  "select": {
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "navBar": {
+    "reserver": "Reserver",
+    "destination": "Destiny",
+    "flightPanel": "Flight panel",
+    "questions": "Questions",
+    "aboutWe": "About We"
+  }
+}

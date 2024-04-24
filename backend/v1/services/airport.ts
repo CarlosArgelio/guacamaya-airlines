@@ -1,29 +1,18 @@
 import { uuid } from 'uuidv4'
 import { faker } from '@faker-js/faker'
-
-export class DataFakeAirPort {
-  database: any = []
-  constructor() {
-    for (let i = 0; i < 10; i++) {
-      this.database.push({
-        id: faker.string.uuid(),
-        name: faker.location.city(),
-      })
-    }
-  }
-}
+import { AppDataSource, Airports } from '../databases'
 
 export class AirPortService {
   constructor(
-    public readonly database: Array<any> = new DataFakeAirPort().database,
+    public readonly database = AppDataSource.getRepository(Airports),
   ) {}
 
   /**
    * Retrieves all airports from the database.
    * @returns {Array} An array of airports from the database. Each airport object contains an `id` and a `name` property.
    */
-  findAll(): Array<any> {
-    return this.database
+  async findAll(): Promise<Airports[]> {
+    return this.database.find()
   }
 
   /**
@@ -31,8 +20,9 @@ export class AirPortService {
    * @param id - The ID of the airport to retrieve from the database.
    * @returns The airport object with the specified ID if found, otherwise undefined.
    */
-  findOne(id: string) {
-    return this.database.find((item: any) => item.id === id)
+  async findOne(id: string): Promise<Airports | null> {
+    const airport = await this.database.findOneBy({ id })
+    return airport
   }
 
   /**
@@ -40,11 +30,10 @@ export class AirPortService {
    * @param data - The airport object to be added.
    * @returns The airport object that was added to the database array.
    */
-  create(data: any) {
-    const id = uuid()
-    const newData = { ...data, id }
-    this.database.push(newData)
-    return data
+  async create(data: any) {
+    const newAirport = this.database.create(data)
+    const saveData = await this.database.save(newAirport)
+    return saveData
   }
 
   /**
@@ -53,13 +42,14 @@ export class AirPortService {
    * @param changes - An object containing the changes to be applied to the airport.
    * @returns The updated airport object.
    */
-  update(id: string, changes: any) {
-    const index = this.database.findIndex((item: any) => item.id === id)
-    if (index === -1) {
-      return null
+  async update(id: string, changes: any) {
+    const airport = await this.findOne(id)
+    if (!airport) {
+      throw new Error('Airport not found')
     }
-    this.database[index] = { ...this.database[index], ...changes }
-    return this.database[index]
+    airport.name = changes.name
+    const saveData = await this.database.save(airport)
+    return saveData
   }
 
   /**
@@ -68,12 +58,5 @@ export class AirPortService {
    * @param {string} id - The ID of the airport to be removed.
    * @returns {boolean|null} - Returns true if the airport object was successfully removed, or null if the airport object with the specified ID was not found in the database.
    */
-  remove(id: string): boolean | null {
-    const index = this.database.findIndex((item) => item.id === id)
-    if (index === -1) {
-      return null
-    }
-    this.database.splice(index, 1)
-    return true
-  }
+  remove(id: string) {}
 }

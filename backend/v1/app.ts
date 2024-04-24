@@ -1,6 +1,7 @@
 import 'reflect-metadata'
 import express, { Application } from 'express'
 import bodyParser from 'body-parser'
+import cors from "cors"
 
 import { networks } from './networks'
 import { config } from './configuration/config'
@@ -16,6 +17,7 @@ export const createApp = () => {
   const app: Application = express()
 
   app.use(bodyParser.json())
+  app.use(cors())
 
   // home endpoint
 
@@ -30,6 +32,7 @@ export const createApp = () => {
   app.use('/api/v1', networkRouter)
 
   app.use(logErrors)
+
   app.use(boomErrorHandler)
   app.use(errorHandler)
 

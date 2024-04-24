@@ -30,13 +30,13 @@ export const errorHandler = (
       },
     }
     error(req, res, messageResponse, 409)
-  }
+  } else {
+    let messageResponse = {
+      message: err.message,
+    }
 
-  let messageResponse = {
-    message: err.message,
+    error(req, res, messageResponse, 409)
   }
-
-  error(req, res, messageResponse, 409)
 }
 
 export const boomErrorHandler = (

@@ -1,14 +1,18 @@
+import { useTranslation } from "react-i18next";
 import { Avila } from "../assets";
 
 
 function Banner() {
+  // eslint-disable-next-line no-unused-vars
+  const [t, i18n] = useTranslation("global");
+
   return (
-    <div className="relative  bg-center h-48 md:h-96">
-      <img src={Avila} alt="" className="relative  bg-center w-full h-48 md:h-96" />
-      <div className="absolute left-0 top-0  flex justify-start items-center">
 
-        <h1 className="text-white text-3xl md:text-5xl font-bold text-center m-16">Te enviamos al paraíso</h1>
-
+     <div className="relative bg-center h-48 md:h-96 mb-8">
+      <img src={Avila} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 flex flex-col justify-start items-start">
+        <h1 className="text-white text-sm md:text-4xl font-bold text-center mt-4 md:mt-14 md:ml-16 ml-4">{t('banner.text1')}</h1>
+        <p className="text-white text-xs md:text-xl font-semibold text-center md:ml-16 ml-4">{t('banner.text2')}</p>    
       </div>
     </div>
   );
