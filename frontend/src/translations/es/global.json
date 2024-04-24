@@ -25,9 +25,11 @@
     "select": "Selecciona",
     "from": "Desde",
     "to": "Hasta",
-    "calendar": "Calendario",
-    "howManyTravel": "Cuantos viajan",
-    "email": "Correo Electronico",
+    "dateStart": "Fecha de salida",
+    "dateEnd": "Fecha de regreso",
+    "howManyAdultTravel": "Cuantos adultos viajan",
+    "howManyChildrenTravel": "Cuantos niños viajan",
+    "email": "Correo Electrónico",
     "CTAButtom": "Reservar"
   },
   "footer": {
