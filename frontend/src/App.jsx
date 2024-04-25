@@ -1,12 +1,14 @@
+import { GuacamayaProvider } from "./context";
 import { Home } from "./pages";
-
 
 function App() {
   return (
     <>
-    <Home />
+      <GuacamayaProvider>
+        <Home />
+      </GuacamayaProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

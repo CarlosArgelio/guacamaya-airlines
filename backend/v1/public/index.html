@@ -1,133 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Confirmacion</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-    <style>
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: sans-serif;
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
     }
-    body{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.868);
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.868);
     }
-    .wrapper{
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        width: 90%;
-        height: 600px;
-        margin: 500px;
-        border-radius: 20px;
-        box-shadow: 0px 5px 20px rgb(87, 87, 87);
-        max-width: 900px;
-        position: fixed;
+    .wrapper {
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      width: 90%;
+      height: 600px;
+      margin: 500px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 20px rgb(87, 87, 87);
+      max-width: 900px;
+      position: fixed;
     }
-    .content{
-        width: 30%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        background-color: rgba(139, 218, 255, 0.868);
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+    .content {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background-color: rgba(139, 218, 255, 0.868);
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
     }
-    .title{
-        width: 100%;
-        padding: 0 30px;
+    .title {
+      width: 100%;
+      padding: 0 30px;
     }
-    .form-information{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-color: aliceblue;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+    .form-information {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: aliceblue;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
-    .confirmation-form{
-        padding: 10px 50px;
-        text-decoration: none;
+    .confirmation-form {
+      padding: 10px 50px;
+      text-decoration: none;
     }
-    .confirmation-form h3{
-        margin: 20px 100px;
-        font-size: 2.5rem;
-        align-items: center;
-        justify-content: center;
+    .confirmation-form h3 {
+      margin: 20px 100px;
+      font-size: 2.5rem;
+      align-items: center;
+      justify-content: center;
     }
-    .icon{
-        margin: 15px 20px;
+    .icon {
+      margin: 15px 20px;
     }
-    .icon i{
-        margin: 10px 45px;
-        border-radius: 50%;
-        padding: 15px;
-        border: solid thin rgba(18, 125, 175, 0.868);
-        text-decoration: none;
-        color: rgba(18, 125, 175, 0.868);
-        cursor: pointer;
+    .icon i {
+      margin: 10px 45px;
+      border-radius: 50%;
+      padding: 15px;
+      border: solid thin rgba(18, 125, 175, 0.868);
+      text-decoration: none;
+      color: rgba(18, 125, 175, 0.868);
+      cursor: pointer;
     }
-    .form{
-        margin: 10px 0 0 0;
+    .form {
+      margin: 10px 0 0 0;
     }
-    .form label{
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        border-radius: 20px;
-        padding: 0 30px;
-        box-shadow: 0px 1px 3px rgb(5, 5, 5);
+    .form label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      padding: 0 30px;
+      box-shadow: 0px 1px 3px rgb(5, 5, 5);
     }
-    form label input{
-        width: 100%;
-        padding: 10px;
-        background-color: aliceblue;
-        border: none;
-        outline: none;
-        border-radius: 20px;
+    form label input {
+      width: 100%;
+      padding: 10px;
+      background-color: aliceblue;
+      border: none;
+      outline: none;
+      border-radius: 20px;
     }
-    .form input[type="submit"]{
-        margin: 50px;
-        background-color: rgba(139, 218, 255, 0.868);
-        color: rgb(32, 31, 31);
-        border-radius: 30px;
-        border: none;
-        padding: 15px 30px;
-        cursor: pointer;
-        margin-top: 8px;
-        margin-bottom: 10px;
-        box-shadow: 0px 1px 2px rgb(5, 5, 5);
+    .form input[type='submit'] {
+      margin: 50px;
+      background-color: rgba(139, 218, 255, 0.868);
+      color: rgb(32, 31, 31);
+      border-radius: 30px;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0px 1px 2px rgb(5, 5, 5);
     }
-    .link{
-        align-items: center;
-        margin: 15px 192px;
-        cursor: pointer;
+    .link {
+      align-items: center;
+      margin: 15px 192px;
+      cursor: pointer;
     }
-    .link a{
-        color: rgba(18, 125, 175, 0.868);
-        outline: 10px;
+    .link a {
+      color: rgba(18, 125, 175, 0.868);
+      outline: 10px;
     }
-    </style>
-<body>
+  </style>
+  <body>
     <div class="wrapper">
-        <div class="content">
-            <div class="title">
-                <h2>GUACAMAYA AIRLINES</h2>
-                <img src="img/icon_guacamaya.svg" href="./src/assets/icon_guacamaya.svg">
-            </div>
+      <div class="content">
+        <div class="title">
+          <h2>GUACAMAYA AIRLINES</h2>
+          <img
+            src="img/icon_guacamaya.svg"
+            href="./src/assets/icon_guacamaya.svg"
+          />
         </div>
-        <div class="form-information">
-            <div class="confirmation-form">
-                <h3>FLIGHT DATA</h3>
-                <form class="form">
+      </div>
+      <div class="form-information">
+        <div class="confirmation-form">
+          <h3>FLIGHT DATA</h3>
+          <p>Destino: {{DESTINATION}}</p>
+          <p>Fecha: {{DATE}}</p>
+          <p>Puerta: {{DOOR}}</p>
+          <!-- <form class="form">
                     <label>
                         <i class='bx bx-current-location'></i>
                         <input type="text" placeholder="Location">  
@@ -153,14 +162,14 @@
                     <div class="link">
                         <h6><a href="#">UNSUBSCRIBE</a></h6>
                     </div>
-                </form>
-                <div class="icon">
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="#"><i class='bx bxl-gmail'></i></a>
-                </div>
-            </div>
+                </form> -->
+          <div class="icon">
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-whatsapp"></i></a>
+            <a href="#"><i class="bx bxl-gmail"></i></a>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

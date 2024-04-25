@@ -17,7 +17,7 @@ function Table() {
 
   return (
     <div id="flightPlans" className="container max-w-6xl mx-auto py-8 ">
-      <div className="flex">
+      <div className="flex dark:text-white ">
         <h1 className="text-3xl font-semibold mb-8 ml-4 mb:mr-4">
           {t("table.flightPlans")}
         </h1>

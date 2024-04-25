@@ -30,8 +30,17 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
 }
 
 const update = async (req: Request, res: Response, next: NextFunction) => {
-  const data = req.body
+  let data: any = null
   const { id } = req.params
+  const { status } = req.query
+
+  if (status === 'CONFIRM') {
+    data = { status: true }
+  } else if (status === 'RECHAZED') {
+    data = { status: false }
+  } else {
+    throw new Error('Invalid query')
+  }
 
   try {
     const controller = new ReservationController()
@@ -43,10 +52,5 @@ const update = async (req: Request, res: Response, next: NextFunction) => {
 }
 
 reserver.post('/', schemaHandler(createReservation, Properties.BODY), create)
-reserver.put(
-  '/:id/confirm',
-  schemaHandler(findId, Properties.PATH),
-  schemaHandler(confirmReservation, Properties.BODY),
-  update,
-)
+reserver.get('/:id/confirm', schemaHandler(findId, Properties.PATH), update)
 reserver.get('/flight-plans', getAll)
