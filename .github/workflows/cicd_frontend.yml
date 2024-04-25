@@ -1,0 +1,51 @@
+name: CI/CD Frontend React (Guacamaya Airline)
+
+on:
+  push:
+    branches: [ feature/cicd_frontend ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configurar Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: |
+          cd frontend
+          npm install
+
+      - name: Generar build
+        run: |
+          cd frontend
+          npm run build
+
+      - name: artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: "upload artifacts"
+          path: frontend/dist/
+
+      - name: Sync dist to S3
+        uses: docker://amazon/aws-cli:2.0.7
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: us-east-1
+        with:
+          args: s3 sync frontend/dist/ ${{ secrets.S3_REPO_FRONTEND }} --delete
+
+      - name: Create Invalidation to CDN Services AWS
+        uses: docker://amazon/aws-cli:2.0.7
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: us-east-1
+        with:
+          args: cloudfront create-invalidation --distribution-id EE96BQATMSNGK --paths '/*'
