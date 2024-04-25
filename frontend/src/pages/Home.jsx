@@ -4,6 +4,8 @@ import { Navbar, Banner, Form, OurPlaces, FAQS, Table, Footer } from "./../compo
 function Home() {
   return (
     <>
+    <div className="dark:bg-slate-900">
+
       <Navbar />
       <Banner />
       <Form />
@@ -11,6 +13,7 @@ function Home() {
       <FAQS />
       <Table />
       <Footer />
+    </div>
     </>
   )
 }

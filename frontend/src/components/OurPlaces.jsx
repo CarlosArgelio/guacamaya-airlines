@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 function Card({ imageSrc, title, description }) {
   return (
     <div className="w-full md:w-1/3 lg:w-1/4 px-4 mb-10 flex justify-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
-      <div className="relative shadow-2xl  rounded-3xl">
+      <div className="relative shadow-2xl  dark:shadow-blue-400/50 rounded-3xl">
         <img src={imageSrc} alt={title} className="w-full h-auto rounded-3xl" />
         <div className="absolute inset-0 bg-black rounded-3xl opacity-0 hover:opacity-75 transition duration-300 flex justify-center items-center">
           <div className="text-center">
@@ -34,7 +34,7 @@ function OurPlaces() {
 
   return (
 
-    <div id="ourPlaces" className="container max-w-6xl mx-auto py-8  ">
+    <div id="ourPlaces" className="dark:text-white  container max-w-6xl mx-auto py-8  ">
         <div className="flex">
 
       <h1 className="text-3xl font-semibold mb-8 ml-4">{t("ourPlaces.weDestination")}</h1>

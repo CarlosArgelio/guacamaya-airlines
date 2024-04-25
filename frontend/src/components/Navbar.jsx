@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-sky-500 p-2">
+    <nav className="bg-sky-500 p-2 dark:bg-blue-900">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -24,19 +24,19 @@ function Navbar() {
           </div>
           <div className="hidden md:flex items-center">
 
-            <Link to="reservation" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
+            <Link to="reservation" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer">
                {t('navBar.reserver')}
             </Link>
-            <Link to="ourPlaces" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
+            <Link to="ourPlaces" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer">
               {t('navBar.destination')}
             </Link>
-            <Link to="FAQs" smooth={true} duration={900} className="text-white text-lg font-bold px-4 py-2 hover:text-blue-900 cursor-pointer">
+            <Link to="FAQs" smooth={true} duration={900} className="text-white text-lg font-bold px-4 py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer">
                {t('navBar.questions')}
             </Link>
-            <Link to="flightPlans" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
+            <Link to="flightPlans" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer">
             {t('navBar.flightPanel')}
             </Link>
-            <Link to="footer" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 cursor-pointer">
+            <Link to="footer" smooth={true} duration={900} className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer">
              {t('navBar.aboutWe')}
             </Link>
 
@@ -57,11 +57,11 @@ function Navbar() {
         {isOpen && (
           <div className="md:hidden mt-2 ">
 
-            <Link to="reservation" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.reserver')}</Link>
-            <Link to="ourPlaces" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.destination')}</Link>
-            <Link to="FAQs" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.questions')}</Link>
-            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer"> {t('navBar.flightPanel')}</Link>
-            <Link to="footer" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900  cursor-pointer">{t('navBar.aboutWe')}</Link>
+            <Link to="reservation" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer">{t('navBar.reserver')}</Link>
+            <Link to="ourPlaces" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer">{t('navBar.destination')}</Link>
+            <Link to="FAQs" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer">{t('navBar.questions')}</Link>
+            <Link to="flightPlans" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer"> {t('navBar.flightPanel')}</Link>
+            <Link to="footer" smooth={true} duration={900} className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer">{t('navBar.aboutWe')}</Link>
 
           </div>
         )}
