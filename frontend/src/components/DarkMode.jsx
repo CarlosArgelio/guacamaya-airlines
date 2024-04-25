@@ -1,10 +1,12 @@
 import { MoonIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import { useContext } from "react";
+import { GuacamayaContext } from "./../context";
 
 export const DarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const context = useContext(GuacamayaContext);
+
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    context.setDarkMode(!context.darkMode);
   };
 
   return (
