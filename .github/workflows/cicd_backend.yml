@@ -1,0 +1,37 @@
+name: CI/CD Frontend React (Guacamaya Airline)
+
+on:
+  push:
+    branches: [ feacture/cicd-backend ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configurar Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Create Key
+        run: |
+          echo "${{ secrets.BACKEND_KEY }}"|base64 --decode > backend.pem
+          chmod 400 backend.pem
+
+      - name: Instalar dependencias
+        run: |
+          cd backend
+          npm install
+      
+      - name: Deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no -i "backend.pem" ${{ secrets.BACKEND_SSH_USER }}@${{ secrets.BACKEND_HOST }} "cd ${{ secrets.BACKEND_ROOT_PATH }} && git checkout feacture/cicd-backend && git restore . && git stash && git pull origin feacture/cicd-backend && exit"
+          ssh -o StrictHostKeyChecking=no -i "backend.pem" ${{ secrets.BACKEND_SSH_USER }}@${{ secrets.BACKEND_HOST }} "cd ${{ secrets.BACKEND_ROOT_PATH }} && sudo service nginx stop && npm run pm2:stop && docker-compose down && exit"
+          ssh -o StrictHostKeyChecking=no -i "backend.pem" ${{ secrets.BACKEND_SSH_USER }}@${{ secrets.BACKEND_HOST }} "sudo chmod -R 777 ${{ secrets.BACKEND_ROOT_PATH }} && sudo chown -R ubuntu.ubuntu ${{ secrets.BACKEND_ROOT_PATH }} && cd ${{ secrets.BACKEND_ROOT_PATH }} && npm install && exit"
+          ssh -o StrictHostKeyChecking=no -i "backend.pem" ${{ secrets.BACKEND_SSH_USER }}@${{ secrets.BACKEND_HOST }} "cd ${{ secrets.BACKEND_ROOT_PATH }} && docker-compose up -d && npm run pm2:start && exit"
+          ssh -o StrictHostKeyChecking=no -i "backend.pem" ${{ secrets.BACKEND_SSH_USER }}@${{ secrets.BACKEND_HOST }} "sudo service nginx start && sudo service nginx restart"
+
+        
