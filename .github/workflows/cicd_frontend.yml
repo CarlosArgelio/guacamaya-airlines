@@ -39,4 +39,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
         with:
-          args: s3 cp frontend/dist/ s3://www.guacamaya-airline.com/ --recursive
+          args: s3 sync frontend/dist/ s3://www.guacamaya-airline.com/ --delete
