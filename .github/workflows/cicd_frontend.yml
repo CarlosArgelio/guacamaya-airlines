@@ -39,5 +39,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
         with:
-          args: s3 sync frontend/dist/ ${{ secrets.S3_REPO_FRONTEND }} --delete
-          args: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_FRONTEND }} --paths '/*'
+          args: |
+            s3 sync frontend/dist/ ${{ secrets.S3_REPO_FRONTEND }} --delete
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_FRONTEND }} --paths '/*'
