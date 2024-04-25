@@ -57,8 +57,8 @@ function Form() {
   
 
   return (
-    <div id="reservation" className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl ">
-    <div className="flex rounded-t-xl pt-2 justify-center text-white bg-lime-400 drop-shadow-lg">
+    <div id="reservation" className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl dark:shadow-lime-500/45">
+    <div className="flex rounded-t-xl pt-2 justify-center text-white bg-lime-400 drop-shadow-lg dark:bg-lime-600 ">
       <h1 className="md:text-3xl text-xl  font-bold mb-4">{t('form.reserveYourFlight')}</h1>
       <TicketIcon className="md:w-10 w-8 h-10" />
     </div>
@@ -67,7 +67,7 @@ function Form() {
         <div className="py-2">
           <input
             id="draft"
-            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400"
+            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400 dark:checked:bg-lime-500"
             type="radio"
             name="status"
             checked={oneWay}
@@ -79,7 +79,7 @@ function Form() {
           <label className="px-2 py-2">{t('form.oneWay')}</label>
           <input
             id="published"
-            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400"
+            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400 dark:checked:bg-lime-500"
             type="radio"
             name="status"
             checked={roundTrip}
@@ -183,7 +183,7 @@ function Form() {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-lime-400 shadow-md shadow-lime-300 hover:shadow-lime-400  text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-lime-500"
+            className="bg-lime-400 shadow-md shadow-lime-300 hover:shadow-lime-400  text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-lime-500 dark:bg-lime-600 dark:shadow-lime-400 dark:hover:bg-lime-800 dark:hover:shadow-lime-600"
           >
             {t('form.CTAButtom')}
           </button>

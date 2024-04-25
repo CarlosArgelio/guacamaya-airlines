@@ -7,7 +7,7 @@ function Faqs() {
     const [t, i18n] = useTranslation("global");
 
   return (
-    <div id="FAQs" className="max-w-6xl mx-auto py-8 " >
+    <div id="FAQs" className="max-w-6xl mx-auto py-8 dark:text-white " >
        <div className="flex">
 
 
@@ -16,14 +16,14 @@ function Faqs() {
       <QuestionMarkCircleIcon className="w-10 h-10 "></QuestionMarkCircleIcon>
        </div>
 
-      <div className="divide-y divide-gray-300">
+      <div className="divide-y divide-gray-300 ">
         {
           [0, 1, 2, 3, 4].map((faq, index) => {
             let i = index + 1
             return (
-              <div key={index} className="py-4">
+              <div key={index} className="py-4 ">
                 <h3 className="text-xl font-medium mb-2">{t(`faq.faq${i}.q`)}</h3>
-                <p className="text-gray-700">{t(`faq.faq${i}.a`)}</p>
+                <p className="text-gray-700 dark:text-white ">{t(`faq.faq${i}.a`)}</p>
               </div>
 
             )
