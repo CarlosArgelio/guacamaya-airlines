@@ -25,7 +25,6 @@ jobs:
         run: |
           cd frontend
           npm run build
-          cat ${{ secrets.CLOUDFRONT_FRONTEND }}
 
       - name: artifacts
         uses: actions/upload-artifact@v2
@@ -49,4 +48,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
         with:
-          args: cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_FRONTEND }} --paths '/*'
+          args: cloudfront create-invalidation --distribution-id EE96BQATMSNGK --paths '/*'
