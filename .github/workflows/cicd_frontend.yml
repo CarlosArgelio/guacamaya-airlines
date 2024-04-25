@@ -2,7 +2,7 @@ name: CI/CD Frontend React (Guacamaya Airline)
 
 on:
   push:
-    branches: [ feature/cicd_frontend ]
+    branches: [ feacture/cicd-backend ]
 
 jobs:
   build-deploy:
