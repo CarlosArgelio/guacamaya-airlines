@@ -11,8 +11,9 @@ export interface DataBase {
 
 export interface Config {
   port: number
-  apiKeyResend: string
-  emailFromResend: string
+  hostAPI: string
+  email: string
+  passwordEmail: string
   database: DataBase
   isDev: boolean
   isProd: boolean
