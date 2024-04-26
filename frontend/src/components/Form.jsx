@@ -27,6 +27,7 @@ function Form() {
 
 
   const handleSubmit = async (event) => {
+
     event.preventDefault();
   
     const formData = {
@@ -42,23 +43,23 @@ function Form() {
     };
     
     if (formData.oneWay === true) {
-      formData.roundTrip = ''
+      delete formData.dateEnd
     } 
     
     try {
       const response = await postCreateReservation(formData);
       console.log('Respuesta del servidor:', response.data);
-      // Maneja la respuesta del servidor aquí
+    
     } catch (error) {
-      console.error('Error al enviar la solicitud:', error);
-      // Maneja el error aquí
+      alert('El correo ya esta en uso', error);
+      
     }
   };
   
 
   return (
-    <div id="reservation" className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl dark:shadow-lime-500/45">
-    <div className="flex rounded-t-xl pt-2 justify-center text-white bg-lime-400 drop-shadow-lg dark:bg-lime-600 ">
+    <div id="reservation" className="relative max-w-6xl mx-auto rounded-b-xl shadow-xl dark:shadow-green-500/30">
+    <div className="flex rounded-t-xl pt-2 justify-center text-white bg-lime-400 drop-shadow-lg dark:bg-green-500 ">
       <h1 className="md:text-3xl text-xl  font-bold mb-4">{t('form.reserveYourFlight')}</h1>
       <TicketIcon className="md:w-10 w-8 h-10" />
     </div>
@@ -67,7 +68,7 @@ function Form() {
         <div className="py-2">
           <input
             id="draft"
-            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400 dark:checked:bg-lime-500"
+            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400 dark:checked:bg-green-500"
             type="radio"
             name="status"
             checked={oneWay}
@@ -79,7 +80,7 @@ function Form() {
           <label className="px-2 py-2">{t('form.oneWay')}</label>
           <input
             id="published"
-            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400 dark:checked:bg-lime-500"
+            className="appearance-none border border-gray-400 rounded-full w-4 h-4 checked:bg-lime-400 dark:checked:bg-green-500"
             type="radio"
             name="status"
             checked={roundTrip}
@@ -105,18 +106,20 @@ function Form() {
                 ))
               }
             </select>
-            {!oneWay && (
+        
             <><label htmlFor="name" className="block text-gray-700 font-semibold">
                   {t('form.to')}:
                 </label><select id="select" className="w-full px-4 py-2 border rounded-md" value={to} onChange={(e) => setTo(e.target.value)}>
                     <option value="">{t('form.select')}</option>
-                    {airPorts.map(item => (
-                      <>
-                        <option key={item.id} id={item.id} value={item.name}>{item.name}</option>
-                      </>
-                    ))}
+                    {
+                airPorts.map(item => (
+                  <>
+                     <option key={item.id} id={item.id} value={item.name}>{item.name}</option>
+                  </>
+                ))
+              }
                   </select></>
-            )}
+        
           </div>
           <div className="md:w-1/4 mb-4 mx-2">
             <label className="block text-gray-700 font-semibold">
@@ -183,7 +186,7 @@ function Form() {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-lime-400 shadow-md shadow-lime-300 hover:shadow-lime-400  text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-lime-500 dark:bg-lime-600 dark:shadow-lime-400 dark:hover:bg-lime-800 dark:hover:shadow-lime-600"
+            className="bg-lime-400 shadow-md shadow-lime-300 hover:shadow-lime-400  text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-lime-500 dark:bg-green-500 dark:shadow-green-600 dark:hover:bg-green-600 dark:hover:shadow-green-700"
           >
             {t('form.CTAButtom')}
           </button>

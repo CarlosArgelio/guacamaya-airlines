@@ -12,7 +12,7 @@ export const Translation = () => {
 
   return (
     <React.Fragment>
-      {/* Aqui estaba el boton de DarkMode */}
+   
       <select
         id="select"
         className="bg-white border border-gray-300 py-2 px-2 rounded-md focus:outline-none focus:border-yellow-500"
