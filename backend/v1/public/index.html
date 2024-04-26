@@ -79,7 +79,9 @@
       cursor: pointer;
     }
     .form {
-      margin: 10px 0 0 0;
+      margin: 20px 0 0 0;
+      padding: 3px;
+      
     }
     .form label {
       display: flex;
@@ -89,9 +91,9 @@
       padding: 0 30px;
       box-shadow: 0px 1px 3px rgb(5, 5, 5);
     }
-    form label input {
+    .form label p {
       width: 100%;
-      padding: 10px;
+      padding: 5px;
       background-color: aliceblue;
       border: none;
       outline: none;
@@ -124,10 +126,7 @@
       <div class="content">
         <div class="title">
           <h2>GUACAMAYA AIRLINES</h2>
-          <img
-            src="img/icon_guacamaya.svg"
-            href="./src/assets/icon_guacamaya.svg"
-          />
+          <img src="img/icon_guacamaya.svg" href="./src/assets/icon_guacamaya.svg"/>
         </div>
       </div>
       <div class="form-information">
@@ -136,38 +135,38 @@
           <p>Destino: {{DESTINATION}}</p>
           <p>Fecha: {{DATE}}</p>
           <p>Puerta: {{DOOR}}</p>
-          <!-- <form class="form">
-                    <label>
-                        <i class='bx bx-current-location'></i>
-                        <input type="text" placeholder="Location">  
-                    </label>
-                    <label>
-                        <i class='bx bxs-calendar'></i>
-                        <input type="text" placeholder="DD/MM/AAAA">
-                    </label>
-                    <label>
-                        <i class='bx bxs-plane-alt'></i>
-                        <input type="text" placeholder="Flight number">  
-                    </label>
-                    <label>
-                        <i class='bx bxs-square-rounded' ></i>
-                        <input type="text" placeholder="Seat">  
-                    </label>
-                    <label>
-                        <i class='bx bx-money' ></i>
-                        <input type="text" placeholder="$$$">  
-                    </label>
-                    <input type="submit" value="ACEPTAR">
-                    <input type="submit" value="CANCELAR">
-                    <div class="link">
-                        <h6><a href="#">UNSUBSCRIBE</a></h6>
-                    </div>
-                </form> -->
-          <div class="icon">
-            <a href="#"><i class="bx bxl-instagram"></i></a>
-            <a href="#"><i class="bx bxl-whatsapp"></i></a>
-            <a href="#"><i class="bx bxl-gmail"></i></a>
-          </div>
+            <div class="form">
+                <label>
+                    <i class='bx bx-current-location'></i>
+                      <p>{{Location}}</p>
+                </label>
+                <label>
+                    <i class='bx bxs-calendar'></i>
+                      <p>{{DD/MM/YYYY}}</p>
+                </label>
+                <label>
+                    <i class='bx bxs-plane-alt'></i>
+                      <P>{{Flight number}}</P>  
+                </label>
+                <label>
+                    <i class='bx bxs-square-rounded' ></i>
+                      <P>{{Seat}}</P> 
+                </label>
+                <label>
+                    <i class='bx bx-money' ></i>
+                      <P>{{Cost}}</P>  
+                </label>
+                <input type="submit" value="ACEPTAR">
+                <input type="submit" value="CANCELAR">
+                <div class="link">
+                    <h6><a href="#">UNSUBSCRIBE</a></h6>
+                </div>
+            </div>
+            <div class="icon">
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-whatsapp"></i></a>
+                <a href="#"><i class="bx bxl-gmail"></i></a>
+            </div>
         </div>
       </div>
     </div>
