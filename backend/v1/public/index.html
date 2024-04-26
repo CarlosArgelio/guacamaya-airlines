@@ -1,175 +1,149 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Confirmacion</title>
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <title>Backend with Express y TypeScript</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: linear-gradient(to right, #f2f2f2, #e6e6e6);
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 2.5em;
+      }
+
+      h2 {
+        color: #666;
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+
+      .logo {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      .logo img {
+        width: 100px;
+        height: auto;
+      }
+
+      .desarrollador {
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .desarrollador img {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #333;
+        color: #fff;
+      }
+
+      footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      footer li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      footer i {
+        font-size: 1.5em;
+        margin-right: 5px;
+      }
+
+      .tecnologia {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        position: relative;
+      }
+
+      .tecnologia h3 {
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .tecnologia p {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        transition: opacity 0.3s ease;
+      }
+
+      .tecnologia:hover p {
+        display: block;
+        opacity: 1;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Optional: Set width to 100% for full-width centering */
+      }
+    </style>
   </head>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-      font-family: sans-serif;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: rgba(255, 255, 255, 0.868);
-    }
-    .wrapper {
-      background-color: rgb(255, 255, 255);
-      display: flex;
-      width: 90%;
-      height: 600px;
-      margin: 500px;
-      border-radius: 20px;
-      box-shadow: 0px 5px 20px rgb(87, 87, 87);
-      max-width: 900px;
-      position: fixed;
-    }
-    .content {
-      width: 30%;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      background-color: rgba(139, 218, 255, 0.868);
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
-    }
-    .title {
-      width: 100%;
-      padding: 0 30px;
-    }
-    .form-information {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      background-color: aliceblue;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-    .confirmation-form {
-      padding: 10px 50px;
-      text-decoration: none;
-    }
-    .confirmation-form h3 {
-      margin: 20px 100px;
-      font-size: 2.5rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .icon {
-      margin: 15px 20px;
-    }
-    .icon i {
-      margin: 10px 45px;
-      border-radius: 50%;
-      padding: 15px;
-      border: solid thin rgba(18, 125, 175, 0.868);
-      text-decoration: none;
-      color: rgba(18, 125, 175, 0.868);
-      cursor: pointer;
-    }
-    .form {
-      margin: 10px 0 0 0;
-    }
-    .form label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      border-radius: 20px;
-      padding: 0 30px;
-      box-shadow: 0px 1px 3px rgb(5, 5, 5);
-    }
-    form label input {
-      width: 100%;
-      padding: 10px;
-      background-color: aliceblue;
-      border: none;
-      outline: none;
-      border-radius: 20px;
-    }
-    .form input[type='submit'] {
-      margin: 50px;
-      background-color: rgba(139, 218, 255, 0.868);
-      color: rgb(32, 31, 31);
-      border-radius: 30px;
-      border: none;
-      padding: 15px 30px;
-      cursor: pointer;
-      margin-top: 8px;
-      margin-bottom: 10px;
-      box-shadow: 0px 1px 2px rgb(5, 5, 5);
-    }
-    .link {
-      align-items: center;
-      margin: 15px 192px;
-      cursor: pointer;
-    }
-    .link a {
-      color: rgba(18, 125, 175, 0.868);
-      outline: 10px;
-    }
-  </style>
   <body>
-    <div class="wrapper">
-      <div class="content">
-        <div class="title">
-          <h2>GUACAMAYA AIRLINES</h2>
-          <img
-            src="img/icon_guacamaya.svg"
-            href="./src/assets/icon_guacamaya.svg"
-          />
-        </div>
+    <header>
+      <h1>Backend with Express y TypeScript</h1>
+      <h2>By Carlos Palacios</h2>
+      <div class="desarrollador">
+        <img src="./developerBackend.png" alt="Foto Carlos Palacios" />
       </div>
-      <div class="form-information">
-        <div class="confirmation-form">
-          <h3>FLIGHT DATA</h3>
-          <p>Destino: {{DESTINATION}}</p>
-          <p>Fecha: {{DATE}}</p>
-          <p>Puerta: {{DOOR}}</p>
-          <!-- <form class="form">
-                    <label>
-                        <i class='bx bx-current-location'></i>
-                        <input type="text" placeholder="Location">  
-                    </label>
-                    <label>
-                        <i class='bx bxs-calendar'></i>
-                        <input type="text" placeholder="DD/MM/AAAA">
-                    </label>
-                    <label>
-                        <i class='bx bxs-plane-alt'></i>
-                        <input type="text" placeholder="Flight number">  
-                    </label>
-                    <label>
-                        <i class='bx bxs-square-rounded' ></i>
-                        <input type="text" placeholder="Seat">  
-                    </label>
-                    <label>
-                        <i class='bx bx-money' ></i>
-                        <input type="text" placeholder="$$$">  
-                    </label>
-                    <input type="submit" value="ACEPTAR">
-                    <input type="submit" value="CANCELAR">
-                    <div class="link">
-                        <h6><a href="#">UNSUBSCRIBE</a></h6>
-                    </div>
-                </form> -->
-          <div class="icon">
-            <a href="#"><i class="bx bxl-instagram"></i></a>
-            <a href="#"><i class="bx bxl-whatsapp"></i></a>
-            <a href="#"><i class="bx bxl-gmail"></i></a>
-          </div>
+    </header>
+
+    <main>
+      <section class="tecnologias">
+        <div class="tecnologia">
+          <a href="http://localhost:3000/">
+            <h3>Documentación</h3>
+            <i class="fas fa-link"></i>
+          </a>
+          <p>Revisa la documentación del proyecto :D</p>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Redes Sociales:</p>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/palaciosrcarlosa/"
+            ><i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

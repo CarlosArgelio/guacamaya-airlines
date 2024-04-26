@@ -2,7 +2,7 @@ name: CI/CD Frontend React (Guacamaya Airline)
 
 on:
   push:
-    branches: [ feacture/cicd-backend ]
+    branches: [ main ]
 
 jobs:
   build-deploy:
@@ -20,6 +20,8 @@ jobs:
         run: |
           cd frontend
           npm install
+          touch .env
+          echo "VITE_API='https://api.guacamaya-airlines.com'" >> .env
 
       - name: Generar build
         run: |

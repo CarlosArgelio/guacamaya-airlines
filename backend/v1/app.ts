@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 import express, { Application } from 'express'
 import bodyParser from 'body-parser'
-import cors from "cors"
+import cors from 'cors'
 
 import { networks } from './networks'
 import { config } from './configuration/config'
@@ -24,7 +24,7 @@ export const createApp = () => {
   app.use(express.static('public'))
 
   app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/welcome.html')
+    res.sendFile(__dirname + '/public/index.html')
   })
 
   const networkRouter = networks()
