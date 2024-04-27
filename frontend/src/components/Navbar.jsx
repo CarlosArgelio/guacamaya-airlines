@@ -11,122 +11,98 @@ function Navbar() {
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation("global");
 
+  const MAX_MOBILE = 425;
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <nav className="bg-sky-500 p-2 dark:bg-blue-900">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <img src={Logo} alt="" className="h-14" />
-          </div>
-          <div className="hidden md:flex items-center">
-            <Link
-              to="reservation"
-              smooth={true}
-              duration={900}
-              className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer"
-            >
-              {t("navBar.reserver")}
-            </Link>
-            <Link
-              to="ourPlaces"
-              smooth={true}
-              duration={900}
-              className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer"
-            >
-              {t("navBar.destination")}
-            </Link>
-            <Link
-              to="FAQs"
-              smooth={true}
-              duration={900}
-              className="text-white text-lg font-bold px-4 py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer"
-            >
-              {t("navBar.questions")}
-            </Link>
-            <Link
-              to="flightPlans"
-              smooth={true}
-              duration={900}
-              className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer"
-            >
-              {t("navBar.flightPanel")}
-            </Link>
-            <Link
-              to="footer"
-              smooth={true}
-              duration={900}
-              className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan-300 cursor-pointer"
-            >
-              {t("navBar.aboutWe")}
-            </Link>
-          </div>
-
-          <div className="flex items-center">
-            <DarkMode />
-            <Translation />
-          </div>
-
-          <div className="flex md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-gray-700 hover:text-black focus:outline-none"
-            >
-              <Bars4Icon className="h-6 w-6 mx-4 text-black" />
-            </button>
-          </div>
+      <div className="flex justify-between items-center container mx-auto">
+        <div className="flex items-center">
+          <img src={Logo} alt="" className="h-14" />
         </div>
-        {isOpen && (
-          <div className="md:hidden mt-2 ">
-            <Link
-              to="reservation"
-              smooth={true}
-              duration={900}
-              className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer"
-            >
-              {t("navBar.reserver")}
-            </Link>
-            <Link
-              to="ourPlaces"
-              smooth={true}
-              duration={900}
-              className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer"
-            >
-              {t("navBar.destination")}
-            </Link>
-            <Link
-              to="FAQs"
-              smooth={true}
-              duration={900}
-              className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer"
-            >
-              {t("navBar.questions")}
-            </Link>
-            <Link
-              to="flightPlans"
-              smooth={true}
-              duration={900}
-              className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer"
-            >
-              {" "}
-              {t("navBar.flightPanel")}
-            </Link>
-            <Link
-              to="footer"
-              smooth={true}
-              duration={900}
-              className="block text-center py-2 px-4 text-white font-bold hover:text-blue-900 dark:hover:text-cyan-300  cursor-pointer"
-            >
-              {t("navBar.aboutWe")}
-            </Link>
-          </div>
+        {window.innerWidth >= MAX_MOBILE && (
+          <>
+            <div className="hidden tablet:flex items-center">
+              {ITEMS_NAVBAR.map((item) => (
+                <Link
+                  key={item.id}
+                  to={item.to}
+                  smooth={true}
+                  duration={900}
+                  className="text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan cursor-pointer"
+                >
+                  {t(item.pathI18n)}
+                </Link>
+              ))}
+            </div>
+          </>
         )}
+
+        {isOpen && (
+          <>
+            <div className="tablet:hidden mt-2">
+              {ITEMS_NAVBAR.map((item) => (
+                <Link
+                  key={item.id}
+                  to={item.to}
+                  smooth={true}
+                  duration={900}
+                  className="mobile:block mobile:text-center mobile:px-4 text-white text-lg font-bold px-4  py-2 hover:text-blue-900 dark:hover:text-cyan cursor-pointer"
+                >
+                  {t(item.pathI18n)}
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div className="flex items-center">
+          <DarkMode />
+          <Translation />
+        </div>
+
+        <div className="flex md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-700 hover:text-black focus:outline-none"
+          >
+            <Bars4Icon className="h-6 w-6 mx-4 text-black" />
+          </button>
+        </div>
       </div>
     </nav>
   );
 }
+
+const ITEMS_NAVBAR = [
+  {
+    id: 1,
+    to: "reservation",
+    pathI18n: "navBar.reserver",
+  },
+  {
+    id: 2,
+    to: "ourPlaces",
+    pathI18n: "navBar.destination",
+  },
+  {
+    id: 3,
+    to: "FAQs",
+    pathI18n: "navBar.questions",
+  },
+  {
+    id: 4,
+    to: "flightPlans",
+    pathI18n: "navBar.flightPanel",
+  },
+  {
+    id: 5,
+    to: "footer",
+    pathI18n: "navBar.aboutWe",
+  },
+];
 
 export default Navbar;

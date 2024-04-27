@@ -22,7 +22,7 @@ function Home() {
           <Form />
           <OurPlaces />
           <FAQS />
-          <Table />
+          {/* <Table /> */}
           <Footer />
         </div>
       </div>
