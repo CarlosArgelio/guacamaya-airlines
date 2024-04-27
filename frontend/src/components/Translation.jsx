@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useTranslation } from "react-i18next";
 
 export const Translation = () => {
@@ -12,10 +13,11 @@ export const Translation = () => {
 
   return (
     <React.Fragment>
-   
+   <div className="flex bg-white rounded-lg">
+
       <select
         id="select"
-        className="bg-white border border-gray-300 py-2 px-2 rounded-md focus:outline-none focus:border-yellow-500"
+        className="appearance-none py-2 px-2 rounded-md focus:outline-none "
         onChange={handleChangeLanguage}
       >
         <option onSelect={() => i18n.changeLanguage("es")} value="es">
@@ -25,6 +27,8 @@ export const Translation = () => {
           {t("select.english")}
         </option>
       </select>
+      <ChevronDownIcon className="w-4 h-4 mt-3 mr-1"></ChevronDownIcon>
+   </div>
     </React.Fragment>
   );
 };

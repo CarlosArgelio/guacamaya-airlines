@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { TicketIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useTranslation } from "react-i18next";
 
 import { getAllAirports } from "./../services/api"
@@ -63,7 +64,7 @@ function Form() {
       <h1 className="md:text-3xl text-xl  font-bold mb-4">{t('form.reserveYourFlight')}</h1>
       <TicketIcon className="md:w-10 w-8 h-10" />
     </div>
-    <div className="max-w-6xl p-4 bg-gray-100 rounded-b-xl">
+    <div className="max-w-6xl p-4 bg-gray-100 dark:bg-zinc-300 rounded-b-xl">
       <form onSubmit={handleSubmit}>
         <div className="py-2">
           <input
@@ -96,7 +97,9 @@ function Form() {
             <label htmlFor="name" className="block text-gray-700 font-semibold">
             {t('form.from')}:
             </label>
-            <select id="select"  className="w-full px-4 py-2 border rounded-md" value={from} onChange={(e) => setFrom(e.target.value)}>
+            <div className="flex bg-white rounded-lg border border-gray-300">
+
+            <select id="select"  className="appearance-none w-full  py-2 px-2 rounded-lg focus:outline-none " value={from} onChange={(e) => setFrom(e.target.value)}>
               <option value="">{t('form.select')}</option>
               {
                 airPorts.map(item => (
@@ -106,10 +109,16 @@ function Form() {
                 ))
               }
             </select>
+      <ChevronDownIcon className="w-4 h-4 mt-3 mr-1"></ChevronDownIcon>
+            </div>
+
         
             <><label htmlFor="name" className="block text-gray-700 font-semibold">
                   {t('form.to')}:
-                </label><select id="select" className="w-full px-4 py-2 border rounded-md" value={to} onChange={(e) => setTo(e.target.value)}>
+                </label>
+                <div className="flex bg-white rounded-lg border border-gray-300 ">
+
+                <select id="select" className="appearance-none w-full  py-2 px-2 rounded-lg focus:outline-none " value={to} onChange={(e) => setTo(e.target.value)}>
                     <option value="">{t('form.select')}</option>
                     {
                 airPorts.map(item => (
@@ -118,7 +127,11 @@ function Form() {
                   </>
                 ))
               }
-                  </select></>
+                  </select>
+      <ChevronDownIcon className="w-4 h-4 mt-3 mr-1"></ChevronDownIcon>
+
+                </div>
+                  </>
         
           </div>
           <div className="md:w-1/4 mb-4 mx-2">
@@ -128,7 +141,7 @@ function Form() {
             <input
               type="date"
               id="date"
-              className="w-full px-4 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-lg focus:outline focus:outline-lime-400 "
               value={dateStart}
     onChange={(e) => setDateStart(e.target.value)}
     required
@@ -140,7 +153,7 @@ function Form() {
                 </label><input
                     type="date"
                     id="date"
-                    className="w-full px-4 py-2 border rounded-md"
+                    className="w-full px-4 py-2 border rounded-lg"
                     value={dateEnd}
                     onChange={(e) => setDateEnd(e.target.value)} /></>
              )}
@@ -152,7 +165,7 @@ function Form() {
             <input
               type="number"
               id="date"
-              className="w-full px-4 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-lg focus:outline focus:outline-lime-400"
               value={adults}
               onChange={(e) => setAdults(parseInt(e.target.value))}
               required
@@ -163,7 +176,7 @@ function Form() {
             <input
               type="number"
               id="date"
-              className="w-full px-4 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-lg focus:outline focus:outline-lime-400"
               value={children}
               onChange={(e) => setChildren(parseInt(e.target.value))}
               required
@@ -176,7 +189,7 @@ function Form() {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-lg focus:outline focus:outline-lime-400"
               value={email}
     onChange={(e) => setEmail(e.target.value)}
     required
